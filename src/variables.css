@@ -1,0 +1,22 @@
+:root {
+  /** Layouts **/
+  --layout-mobile: 375px;
+  --layout-desktop: 1440px;
+
+  /** Colours **/
+  --clr-orange: hsl(25, 97%, 53%);
+  /** 
+   The above was added as an example, please add more colours! 
+   Feel free to set your own desired fonts, font-weights, and font-family! 
+   You can use the Assignment starters we've given you for React as an example!
+  
+  **/
+
+  /** Typography **/
+  --font-paragraph: 16px; 
+
+  --fw-regular: 0;
+  --fw-bold: 0;
+
+  --ff-base: ""
+}
