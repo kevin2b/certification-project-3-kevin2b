@@ -1,7 +1,0 @@
-/* Variable Imports */
-@import '../variables.css';
-
-.example {
-  color: var(--clr-orange);
-  font-size: 24px;
-}
