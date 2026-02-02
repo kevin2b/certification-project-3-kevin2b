@@ -15,7 +15,7 @@ const routes = [
       {path: "about", element: <About/>},
       {path: "cart", element: <Cart/>},
       {path: "shop", element: <Shop/>},
-      {path: "product", element: <Product/>},
+      {path: "product/:id", element: <Product/>},
       {path: "*", element: <Error/>},
     ],
   },

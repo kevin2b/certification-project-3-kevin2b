@@ -7,7 +7,7 @@ function Shop(){
     <section> 
       This is shop page
       { products.map(product => (
-          <ShopProduct key={product.id} image={product.image} title={product.title} price={product.price} stock= {product.stock}/>
+          <ShopProduct key={product.id} id={product.id} image={product.image} title={product.title} price={product.price} stock= {product.stock}/>
         ))
       }
     </section>
