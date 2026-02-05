@@ -61,9 +61,9 @@ function orderProducts(products, order){
     case "nameDesc":
       return productsDup.sort((a,b) => b.title.localeCompare(a.title, undefined, { sensitivity: 'base' }));
     case "priceAsc":
-      return productsDup.sort((a,b) => Number(a.price) - Number(b.price));
+      return productsDup.sort((a,b) => a.price - b.price);
     case "priceDesc":
-      return productsDup.sort((a,b) => Number(b.price) - Number(a.price));
+      return productsDup.sort((a,b) => b.price - a.price);
     default:
       return productsDup.sort((a,b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' }));
   }
