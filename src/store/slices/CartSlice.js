@@ -16,12 +16,9 @@ const cartSlice = createSlice({
     },
     changeQuantityCart: (state, action) => {
       const productId = action.payload.productId;
-      const quantity = Number(action.payload.quantity);
-      if (quantity === 0){
-        delete state[productId];
-      }
-      else{
-        state[productId] = quantity;
+      const quantity = action.payload.quantity;
+      if (productId in state){
+        state[productId] = quantity === ""? 0: Number(quantity);
       }
     },
     removeFromCart: (state, action) => {

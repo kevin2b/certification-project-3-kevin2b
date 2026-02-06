@@ -26,9 +26,9 @@ function ProductQuantitySelector({quantity, setQuantity, min, max}){
 
   return (
     <>
-      <button type="button" disabled={quantity === "" || Number(quantity)<= min} onClick={()=>{setQuantity(prev => Number(prev)-1)}}> - </button>
+      <button type="button" disabled={quantity === "" || Number(quantity)<= min} onClick={()=>{setQuantity(quantity-1)}}> - </button>
       <input type="text" inputMode="numeric" value={quantity} onChange={handleQuantityChange} />
-      <button type="button"  disabled={quantity === "" || Number(quantity)>=max} onClick={()=>{setQuantity(prev => Number(prev)+1)}}> + </button>
+      <button type="button"  disabled={quantity === "" || Number(quantity)>=max} onClick={()=>{setQuantity(quantity+1)}}> + </button>
     </>
   );
 }

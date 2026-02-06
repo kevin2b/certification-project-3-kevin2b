@@ -1,7 +1,7 @@
 import { useParams, useNavigate, useLocation } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import ProductQuantitySelector from "@/components/ProductQuantitySelector/ProductQuantitySelector"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {addToCart} from "@/store/slices/CartSlice";
 
 function Product(){
@@ -15,6 +15,10 @@ function Product(){
   const product = products.find(product => product.id === Number(id));
 
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    setQuantity(1);
+  }, [id]); // Prevent state from being preserved if product goes from 1 product page to another
 
 
   function handleBack() {
