@@ -3,7 +3,7 @@ import ShopProduct from "./ShopProduct";
 import { useSearchParams } from "react-router";
 
 function Shop(){
-  const allProducts = useSelector((state) => state.products);
+  const allProducts = useSelector((state) => state.products.items);
   const [searchParams, setSearchParams] = useSearchParams();
   const term = searchParams.get("term") || "";
   const category = searchParams.get("category") || "all"; 

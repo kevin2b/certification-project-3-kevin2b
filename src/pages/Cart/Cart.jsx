@@ -4,7 +4,7 @@ import {removeAllFromCart} from "@/store/slices/CartSlice";
 import {reduceStock} from "@/store/slices/ProductsSlice";
 function Cart(){
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.items);
   const cart = useSelector((state) => state.cart);
   const cartIds = Object.keys(cart);
 
