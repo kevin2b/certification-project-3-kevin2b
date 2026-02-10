@@ -1,12 +1,31 @@
 import { useDispatch, useSelector } from "react-redux";
 import CartProduct from "./CartProduct";
 import {removeAllFromCart} from "@/store/slices/CartSlice";
-import {reduceStock} from "@/store/slices/ProductsSlice";
+import {reduceStock, fetchProducts} from "@/store/slices/ProductsSlice";
+import Loading from "@/components/Loading/Loading";
+import Error from "@/pages/Error/Error";
+import { useEffect } from "react";
+
 function Cart(){
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.items);
+  const {items: products, status} = useSelector((state) => state.products);
   const cart = useSelector((state) => state.cart);
   const cartIds = Object.keys(cart);
+
+  //Attempt data fetch if error in previous fetch
+  useEffect(() => {
+    if (status === 'error') {
+      dispatch(fetchProducts());
+    }
+  }, [dispatch]);
+
+  if(status === "idle" || status === "loading"){
+    return <Loading/>;
+  }
+
+  if(status === "error"){
+    return <Error message="Network error."/>;
+  }
 
   let total = cartIds.reduce((sum, currId) => {
       return (sum +  products.find(product => product.id === Number(currId)).price * cart[currId]);

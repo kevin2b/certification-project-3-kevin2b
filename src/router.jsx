@@ -16,7 +16,7 @@ const routes = [
       {path: "cart", element: <Cart/>},
       {path: "shop", element: <Shop/>},
       {path: "product/:id", element: <Product/>},
-      {path: "*", element: <Error/>},
+      {path: "*", element: <Error message="404 Error. Page not found."/>},
     ],
   },
 ]

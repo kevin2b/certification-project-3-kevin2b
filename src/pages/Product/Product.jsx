@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductQuantitySelector from "@/components/ProductQuantitySelector/ProductQuantitySelector"
 import { useState, useEffect } from "react";
 import {addToCart} from "@/store/slices/CartSlice";
+import {fetchProducts} from "@/store/slices/ProductsSlice";
+import Loading from "@/components/Loading/Loading";
+import Error from "@/pages/Error/Error";
 
 function Product(){
   const navigate = useNavigate();
@@ -10,16 +13,28 @@ function Product(){
   const {id} = useParams();
   const dispatch = useDispatch();
 
-  const products = useSelector((state) => state.products.items);
+  const {items: products, status} = useSelector((state) => state.products);
   const cart = useSelector((state) => state.cart);
-  const product = products.find(product => product.id === Number(id));
 
   const [quantity, setQuantity] = useState(1);
-
   useEffect(() => {
     setQuantity(1);
   }, [id]); // Prevent state from being preserved if product goes from 1 product page to another
 
+  //Attempt data fetch if error in previous fetch
+  useEffect(() => {
+    if (status === 'error') {
+      dispatch(fetchProducts());
+    }
+  }, [dispatch]);
+
+  if(status === "idle" || status === "loading"){
+    return <Loading/>;
+  }
+
+  if(status === "error"){
+    return <Error message="Network error."/>;
+  }
 
   function handleBack() {
     //If there is a back history, key should not be default
@@ -35,6 +50,7 @@ function Product(){
     setQuantity(1);
   }
 
+  const product = products.find(product => product.id === Number(id));
   if (!product){
     return (
     <section>
@@ -47,7 +63,6 @@ function Product(){
   const MIN = 1;
   const MAX = product.stock - (cart?.[product.id] ?? 0);
   
-
   return (
     <section>
       <button type="button" onClick={handleBack}> Back </button>

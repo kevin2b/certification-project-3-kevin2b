@@ -1,6 +1,6 @@
-function Error(){
+function Error({message}){
   return (
-    <section> This is error page </section>
+    <section> {message} </section>
   )
 }
 

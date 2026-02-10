@@ -1,10 +1,31 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import ShopProduct from "./ShopProduct";
 import { useSearchParams } from "react-router";
+import Loading from "@/components/Loading/Loading";
+import Error from "@/pages/Error/Error";
+import {fetchProducts} from "@/store/slices/ProductsSlice";
 
 function Shop(){
-  const allProducts = useSelector((state) => state.products.items);
+  const {items: allProducts, status} = useSelector((state) => state.products);
   const [searchParams, setSearchParams] = useSearchParams();
+  const dispatch = useDispatch();
+
+  //Attempt data fetch if error in previous fetch
+  useEffect(() => {
+    if (status === 'error') {
+      dispatch(fetchProducts());
+    }
+  }, [dispatch]);
+
+  if(status === "idle" || status === "loading"){
+    return <Loading/>;
+  }
+
+  if(status === "error"){
+    return <Error message="Network error."/>;
+  }
+
   const term = searchParams.get("term") || "";
   const category = searchParams.get("category") || "all"; 
   const order = searchParams.get("order") || "nameAsc";
