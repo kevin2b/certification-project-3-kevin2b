@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import CartProduct from "./CartProduct";
 import {removeAllFromCart} from "@/store/slices/CartSlice";
-import {reduceStock, fetchProducts} from "@/store/slices/ProductsSlice";
+import {reduceAllStock, fetchProducts} from "@/store/slices/ProductsSlice";
 import Loading from "@/components/Loading/Loading";
 import Error from "@/pages/Error/Error";
 import { useEffect } from "react";
@@ -28,21 +28,24 @@ function Cart(){
   }
 
   let total = cartIds.reduce((sum, currId) => {
-      return (sum +  products.find(product => product.id === Number(currId)).price * cart[currId]);
+      const product = products.find(product => product.id === Number(currId));
+      //In case cannot find product
+      if (!product){
+        return sum;
+      }
+      return (sum +  product.price * cart[currId]);
     } ,0);
   total = total.toFixed(2);
 
   function isValidCart (){
     return cartIds.every(cartId => {
-      const product= products.find(product => product.id === Number(cartId));
-      return product.stock >= cart[cartId];
+      const product = products.find(product => product.id === Number(cartId));
+      return product ? product.stock >= cart[cartId]: false;
     });
   }
 
   function handleCheckout(){
-    cartIds.forEach(cartId => {
-      dispatch(reduceStock({productId: cartId, quantity: cart[cartId]}));
-    });
+    dispatch(reduceAllStock(cart));
     dispatch(removeAllFromCart());
   }
 
@@ -56,6 +59,10 @@ function Cart(){
           {cartIds.map(productId => {
             const productIdNum = Number(productId);
             const product = products.find((product) => product.id === productIdNum);
+            //Guard
+            if (!product){
+              return null;
+            }
             return <CartProduct key={productIdNum} id={productIdNum} amountInCart={cart[productId]} {...product} />;
           })}
           <div> Grand Total: ${total}</div>

@@ -16,13 +16,15 @@ const productsSlice = createSlice({
     status: "idle", //idle, loading, done, error
   },
   reducers: {
-    reduceStock: (state, action) => {
-      const productId = Number(action.payload.productId);
-      const quantity = Number(action.payload.quantity);
-      const product = state.items.find(product => product.id === productId);
-      if (product){
-        product.stock = Math.max(0, product.stock-quantity)
-      }
+    reduceAllStock: (state, action) => {
+      Object.keys(action.payload).forEach((cartId) => {
+        const productId = Number(cartId);
+        const quantity = Number(action.payload[cartId]);
+        const product = state.items.find(product => product.id === productId);
+        if (product){
+          product.stock = Math.max(0, product.stock-quantity)
+        }
+      });
     }
   },
   extraReducers: (builder) => {
@@ -40,6 +42,6 @@ const productsSlice = createSlice({
   }
 });
 
-export const {reduceStock} = productsSlice.actions;
+export const {reduceAllStock} = productsSlice.actions;
 export { fetchProducts };
 export default productsSlice.reducer;

@@ -1,6 +1,6 @@
 /**
  * Quantity must be a number.
- * Min and max must be numbers and min < max
+ * Min and max must be numbers, min>= 0, min < max
  * User can only input empty string and numbers consisting of only digits.
  * If user enters a number beyond max, quantity is set to max.
  */
