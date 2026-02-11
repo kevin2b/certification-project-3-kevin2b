@@ -1,2 +1,8 @@
 /** Variables Import **/
 @import url('./variables.css');
+
+:root {
+  font-family: var(--ff-base);
+  font-size: var(--font-text);
+  min-inline-size: var(--minWidth);
+}

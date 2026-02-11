@@ -1,8 +1,13 @@
 import { Link } from "react-router";
+import styles from "./Header.module.css";
 
-function NavBar(){
+function Header(){
   return (
-    <nav>
+    <header>
+      <div>
+        <Link to="/" className={styles.storeName}> Lotus </Link>
+      </div>
+      <nav>
       <Link to="/"> Home</Link>
       {` | `}
       <Link to="/shop"> Shop </Link>
@@ -11,7 +16,8 @@ function NavBar(){
       {` | `}
       <Link to="/cart"> Cart </Link>
     </nav>
+    </header>
   )
 }
 
-export default NavBar;
+export default Header;

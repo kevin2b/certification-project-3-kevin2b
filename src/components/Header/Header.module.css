@@ -1,0 +1,5 @@
+.storeName{
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  font-size: var(--font-head);
+}

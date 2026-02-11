@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import routes from './router';
-import './modern-nomalize.css'
+import './modern-normalize.css'
 import './style.css';
 import store from './store/store';
 import { Provider } from 'react-redux';
