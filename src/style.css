@@ -4,5 +4,6 @@
 :root {
   font-family: var(--ff-base);
   font-size: var(--font-text);
+  color: var(--font-text-colour);
   min-inline-size: var(--minWidth);
 }

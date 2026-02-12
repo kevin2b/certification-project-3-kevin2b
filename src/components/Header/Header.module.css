@@ -1,5 +1,82 @@
+.firstRow{
+  display: flex;
+  padding-inline: 1rem;
+  padding-block: 1.5rem;
+  align-items: center;
+  background: linear-gradient( to bottom, var(--background-colour-4) 0.4rem, var(--background-colour-3) 0.4rem);
+}
+
+.storeLogoName{
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+}
+
+.logo{
+  display: inline-block;
+  block-size: auto;
+  inline-size: 2.5rem;
+  max-inline-size: 2.5rem;
+}
+
 .storeName{
   font-family: var(--ff-heading);
   font-weight: 700;
   font-size: var(--font-head);
+  color: var(--font-logo-colour);
+}
+
+.cart{
+  margin-inline-start: auto;
+  color: var(--font-head-colour);
+  background-color: var(--background-colour);
+  padding-inline: 0.5rem;
+  padding-block: 0.25rem;
+  border-radius: 0.25rem;
+  border: 2px solid var(--border-color);
+}
+
+.cart:hover,
+.cart:focus-visible{
+  border-color: var(--border-color-1);
+  background-color: var(--background-colour-3);
+}
+
+.cart:hover > .cartImg,
+.cart:focus-visible > .cartImg{
+  filter: invert(41%) sepia(98%) saturate(4884%) hue-rotate(349deg) brightness(101%) contrast(105%);
+}
+
+.cartImg{
+  display: inline-block;
+  block-size: auto;
+  inline-size: 1.5rem;
+  max-inline-size: 1.5rem;
+}
+
+.nav{
+  display: flex;
+  gap: 0.75rem;
+  background-color: var(--background-colour-1);
+  padding-block: 0.25rem;
+  padding-inline: 0.75rem;
+}
+
+.linkButton{
+  text-decoration: none;
+  color: var(--font-head-colour);
+  background-color: var(--background-colour);
+  text-decoration: none;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid var(--border-color);
+}
+
+.linkButton:hover,
+.linkButton:focus-visible{
+  border-color: var(--border-color-1);
+  color: var(--font-head-colour-1);
+  background-color: var(--background-colour-3);
 }

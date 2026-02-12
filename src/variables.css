@@ -19,11 +19,36 @@
   --maxWidth-mobile: 48rem;
   --maxWidth-desktop: 90rem;
 
+  --clr-white: hsl(0, 0%, 100%);
+
+  --clr-gray-100: hsl(223, 24%, 94%);
+  --clr-gray-125: hsl(223, 20%, 88%);
+  --clr-gray-150: hsl(225, 7%, 79%);
+  --clr-gray-200: hsl(228, 3%, 61%);
+  --clr-gray-400: hsl(215, 5%, 54%);
+  --clr-gray-600: hsl(222, 47%, 11%);
+  --clr-gray-800: hsl(228, 38%, 3%);
+
+  --clr-orange-400: hsl(18, 100%, 50%);
+
   --ff-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --ff-heading: "Cinzel", Georgia, "Times New Roman", serif;
 
   --font-text: 1rem;
   --font-head: 2rem;
+
+  --font-logo-colour: var(--clr-gray-200);
+  --font-head-colour: var(--clr-gray-600);
+  --font-head-colour-1: var(--clr-orange-400);
+  --font-text-colour: var(--clr-gray-800);
+  --background-colour: var(--clr-gray-100);
+  --background-colour-1: var(--clr-gray-150);
+  --background-colour-2: var(--clr-gray-400);
+  --background-colour-3: var(--clr-white);
+  --background-colour-4: var(--clr-orange-400);
+
+  --border-color: var(--clr-gray-125);
+  --border-color-1: var(--clr-orange-400);
 
   @media (min-width: 48rem) {
 
