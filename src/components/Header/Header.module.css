@@ -31,10 +31,11 @@
   margin-inline-start: auto;
   color: var(--font-head-colour);
   background-color: var(--background-colour);
-  padding-inline: 0.5rem;
-  padding-block: 0.25rem;
+  padding-inline: 0.6rem;
+  padding-block: 0.4rem 0.2rem;
   border-radius: 0.25rem;
   border: 2px solid var(--border-color);
+  position: relative
 }
 
 .cart:hover,
@@ -53,6 +54,14 @@
   block-size: auto;
   inline-size: 1.5rem;
   max-inline-size: 1.5rem;
+}
+
+.cartAmount{
+  position: absolute;
+  top: 0rem;
+  right: 0.25rem;
+  font-size: var(--font-text-small);
+  color: var(--font-text-colour-1);
 }
 
 .nav{
@@ -79,4 +88,18 @@
   border-color: var(--border-color-1);
   color: var(--font-head-colour-1);
   background-color: var(--background-colour-3);
+}
+
+.desktop{
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .desktop{
+    display: flex;
+  }
+
+  .mobile{
+    display: none;
+  }
 }

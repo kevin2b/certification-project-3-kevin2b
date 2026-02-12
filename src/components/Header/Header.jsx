@@ -1,9 +1,17 @@
 import { Link } from "react-router";
 import styles from "./Header.module.css";
 import logo from '@/assets/images/logo.svg';
-import cart from '@/assets/images/cart.svg';
+import cartImg from '@/assets/images/cart.svg';
+import { useSelector } from "react-redux";
+
+const CATEGORIES = ["Electronics", "Jewellery", "Men's Clothing", "Women's Clothing"]
 
 function Header(){
+  const cartQuantity = Object.values(useSelector((state) => state.cart));
+  const totalQuantity = cartQuantity.reduce((sum, curr) => {
+    const num = Number(curr) || 0;
+    return num + sum;
+  }, 0);
   return (
     <header>
       <div className={styles.firstRow}>
@@ -12,11 +20,18 @@ function Header(){
           <span className={styles.storeName}> Aura </span>
         </Link>
         <Link to="/cart" className={styles.cart}> 
-          <img src={cart} width="25px" height="auto" alt="Aura Logo" className={styles.cartImg}/>
+          <img src={cartImg} width="25px" height="auto" alt="View cart" className={styles.cartImg}/>
+          {totalQuantity > 0 && <span className={styles.cartAmount}> {totalQuantity>99 ? "99+" : totalQuantity} </span>}
         </Link>
       </div>
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} ${styles.mobile}`}>
         <Link to="/shop" className={styles.linkButton}> Shop </Link>
+        <Link to="/about" className={styles.linkButton}> About </Link>
+      </nav>
+      <nav className={`${styles.nav} ${styles.desktop}`}>
+        {CATEGORIES.map((category) => {
+          return <Link key={category} to={`/shop?category=${category.toLowerCase()}`} className={styles.linkButton}> {category} </Link>
+        })}
         <Link to="/about" className={styles.linkButton}> About </Link>
       </nav>
     </header>

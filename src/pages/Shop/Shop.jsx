@@ -40,7 +40,7 @@ function Shop(){
         <option value="all"> All </option>
         <option value="men's clothing"> Men's Clothing </option>
         <option value="women's clothing"> Women's Clothing </option>
-        <option value="jewelery"> Jewelery </option>
+        <option value="jewellery"> Jewelery </option>
         <option value="electronics"> Electronics </option>
       </select>
       <label htmlFor="order"> Sort By: </label>
