@@ -4,7 +4,7 @@ import logo from '@/assets/images/logo.svg';
 import cartImg from '@/assets/images/cart.svg';
 import { useSelector } from "react-redux";
 
-const CATEGORIES = ["Electronics", "Jewellery", "Men's Clothing", "Women's Clothing"]
+const CATEGORIES = ["All", "Electronics", "Jewellery", "Men's Clothing", "Women's Clothing"]
 
 function Header(){
   const cartQuantity = Object.values(useSelector((state) => state.cart));

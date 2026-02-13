@@ -1,0 +1,36 @@
+.footer{
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding-inline: 0.5rem;
+  padding-block: 3rem;
+  background-color: var(--background-colour-2);
+  color: var(--font-text-colour-2);
+}
+
+.copyright{
+  font-size: var(--font-text-small);
+  margin-inline-end: auto;
+}
+
+.logo{
+  max-inline-size: 1.5rem;
+  inline-size: 1.5rem;
+  block-size: auto;
+  filter: invert(100%) brightness(200%);
+}
+
+.logo:hover,
+.logo:focus-visible {
+  filter: invert(41%) sepia(98%) saturate(4884%) hue-rotate(349deg) brightness(101%) contrast(105%);
+}
+
+.desktop{
+  display: none;
+}
+
+@media (min-width: 48rem){
+  .desktop{
+    display: block;
+  }
+}

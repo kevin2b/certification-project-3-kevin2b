@@ -4,6 +4,8 @@ import { Outlet } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { fetchProducts } from '@/store/slices/ProductsSlice'
 import { useEffect } from 'react';
+import styles from './App.module.css'
+
 const App = () => {
   const dispatch = useDispatch();
 
@@ -12,11 +14,13 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <Header/>
-      <Outlet/>
+      <main className={styles.main}>
+        <Outlet/>
+      </main>
       <Footer/>
-    </>
+    </div>
   )
 }
 
