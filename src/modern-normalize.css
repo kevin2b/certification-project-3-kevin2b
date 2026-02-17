@@ -211,3 +211,8 @@ Add the correct display in Chrome and Safari.
 summary {
 	display: list-item;
 }
+
+
+h1{
+	margin: 0;
+}

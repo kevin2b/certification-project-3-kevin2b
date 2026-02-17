@@ -1,0 +1,65 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 3rem;
+  padding-inline: 2rem;
+  gap: 2rem;
+  flex: auto;
+}
+
+.logoWrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.storeName{
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  font-size: var(--font-head-large);
+  color: var(--font-logo-colour);
+}
+
+.logo{
+  display: inline-block;
+  block-size: auto;
+  inline-size: 8rem;
+  max-inline-size: 8rem;
+}
+
+.summary{
+  color: var(--font-text-colour-3);
+  font-size: var(--font-text-large);
+  text-align: center;
+}
+
+.linkButton{
+  text-decoration: none;
+  color: var(--font-text-colour-2);
+  background-color: var(--background-colour-4);
+  text-decoration: none;
+  padding-inline: 1.4rem;
+  padding-block: 0.75rem;
+  border-radius: 2rem;
+  border: 2px solid var(--border-color-1);
+  font-weight: 700;
+}
+
+.linkButton:hover,
+.linkButton:focus-visible{
+  
+  color: var(--font-head-colour-1);
+  background-color: var(--background-colour-5);
+}
+
+@media (min-width: 48rem) {
+  .wrapper{
+    background-image: url(@/assets/images/bg-home-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+  }
+}
