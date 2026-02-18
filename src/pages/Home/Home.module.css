@@ -3,15 +3,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-block: 3rem;
-  padding-inline: 2rem;
-  gap: 2rem;
+  padding-block: 1rem 2rem;
+  padding-inline: 0.5rem;
+  gap: 1rem;
   flex: auto;
+  background-image: url(@/assets/images/bg-home-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
 }
 
 .logoWrapper{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1rem;
   align-items: center;
 }
@@ -26,8 +30,8 @@
 .logo{
   display: inline-block;
   block-size: auto;
-  inline-size: 8rem;
-  max-inline-size: 8rem;
+  inline-size: 6rem;
+  max-inline-size: 6rem;
 }
 
 .summary{
@@ -57,9 +61,18 @@
 
 @media (min-width: 48rem) {
   .wrapper{
-    background-image: url(@/assets/images/bg-home-mobile.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+    background-image: url(@/assets/images/bg-home-desktop.png);
+    padding-block: 3rem;
+    padding-inline: 2rem;
+    gap: 3rem;
+  }
+
+  .logoWrapper{
+    flex-direction: row;
+  }
+
+  .logo{
+    inline-size: 8rem;
+    max-inline-size: 8rem;
   }
 }
