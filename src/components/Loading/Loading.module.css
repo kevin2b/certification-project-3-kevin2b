@@ -1,0 +1,46 @@
+@keyframes pulse {
+  from{
+    transform: scale(1);
+  }
+  16%{
+    transform: scale(1.5) translateY(-0.25rem);
+  }
+  33%{
+    transform: scale(1);
+  }
+  to { 
+    transform: scale(1);
+  }
+}
+
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  padding-block: 1rem;
+  padding-inline: 0.5rem;
+  flex: auto;
+  font-size: var(--font-text-large);
+  font-weight: 700;
+}
+
+.dot:nth-child(2){
+  display: inline-block;
+  animation: pulse 3s ease-in-out 0s infinite;
+}
+
+.dot:nth-child(3){
+  animation: pulse 3s ease-in-out 1s infinite;
+}
+
+.dot:nth-child(4){
+  animation: pulse 3s ease-in-out 2s infinite;
+}
+
+@media (min-width: 48rem) {
+  .loading{
+    padding-block: 3rem;
+    padding-inline: 2rem;
+  }
+}

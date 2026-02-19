@@ -4,7 +4,7 @@ import products from '@/data.json';
 //This is to fake an API call
 const fetchProducts = createAsyncThunk('products/fetchProducts',
   async () => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     return products;
   }
 );
