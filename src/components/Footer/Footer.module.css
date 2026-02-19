@@ -3,7 +3,7 @@
   gap: 0.75rem;
   align-items: center;
   padding-inline: 0.5rem;
-  padding-block: 2rem;
+  padding-block: 1rem;
   background-color: var(--background-colour-2);
   color: var(--font-text-colour-2);
 }

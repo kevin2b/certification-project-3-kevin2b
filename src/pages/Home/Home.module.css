@@ -1,3 +1,14 @@
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .wrapper{
   display: flex;
   flex-direction: column;
@@ -25,6 +36,7 @@
   font-weight: 700;
   font-size: var(--font-head-large);
   color: var(--font-logo-colour);
+  animation: appear 1s ease both;
 }
 
 .logo{
@@ -38,6 +50,7 @@
   color: var(--font-text-colour-3);
   font-size: var(--font-text-large);
   text-align: center;
+  animation: appear 1s 1s ease both;
 }
 
 .linkButton{
@@ -50,6 +63,7 @@
   border-radius: 2rem;
   border: 2px solid var(--border-color-1);
   font-weight: 700;
+  animation: appear 1s 2s ease both;
 }
 
 .linkButton:hover,

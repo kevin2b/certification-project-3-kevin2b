@@ -7,7 +7,7 @@ function Footer(){
   return (
     <footer className={styles.footer}>
       <div className={styles.copyright}> &copy; 2026 Aura Store. kevin2b </div>
-      <div className={styles.desktop}> Follow us: </div>
+      <div className={styles.desktop}> Follow Us: </div>
       <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" width="25"> 
         <img src={facebook} alt="Facebook" className={styles.logo}/>
       </a>
