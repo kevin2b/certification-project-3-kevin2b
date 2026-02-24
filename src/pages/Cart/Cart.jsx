@@ -41,7 +41,7 @@ function Cart(){
   function isValidCart (){
     return cartIds.every(cartId => {
       const product = products.find(product => product.id === Number(cartId));
-      return product ? product.stock >= cart[cartId]: false;
+      return product ? product.stock >= cart[cartId] && cart[cartId] > 0: false;
     });
   }
 
@@ -57,7 +57,7 @@ function Cart(){
       ):(
         <div className={styles.wrapper}>
           <button type="button" onClick={()=>dispatch(removeAllFromCart())} className={styles.clearButton}>Clear Cart</button>
-          <section>
+          <section className={styles.cartItems}>
             {cartIds.map(productId => {
               const productIdNum = Number(productId);
               const product = products.find((product) => product.id === productIdNum);
@@ -79,7 +79,7 @@ function Cart(){
             </div>
             <div className={styles.summaryRow}>
               <span className={styles.summaryField}> Grand Total: </span>
-              <span> ${total + Number((total*0.13).toFixed(2))} </span>
+              <span> ${(total + Number((total*0.13).toFixed(2))).toFixed(2)} </span>
             </div>
             <button type="button" onClick={()=>handleCheckout()} disabled={!isValidCart()} className={styles.checkoutButton}>Checkout</button>
           </section>

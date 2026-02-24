@@ -31,7 +31,11 @@
 
   --clr-orange-100: hsl(18, 94%, 94%);
   --clr-orange-400: hsl(18, 100%, 50%);
+  --clr-red-300: hsl(0, 99%, 66%);
   --clr-red-400: red;
+  --clr-green-300: hsl(144, 81%, 56%);
+
+  --clr-blue-400: hsl(240, 100%, 46.7%);
 
   --ff-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --ff-heading: "Cinzel", Georgia, "Times New Roman", serif;
@@ -50,6 +54,8 @@
   --font-text-colour-2: var(--clr-white);
   --font-text-colour-3: var(--clr-gray-400);
 
+  --font-link-colour: var(--clr-blue-400);
+
   --background-colour: var(--clr-gray-100);
   --background-colour-1: var(--clr-gray-150);
   --background-colour-2: var(--clr-gray-600);
@@ -57,8 +63,13 @@
   --background-colour-4: var(--clr-orange-400);
   --background-colour-5: var(--clr-orange-100);
 
-  --border-color: var(--clr-gray-125);
+  --background-negative: var(--clr-red-300);
+  --background-positive: var(--clr-green-300);
+
+  --border-color: var(--clr-gray-100);
   --border-color-1: var(--clr-orange-400);
+  --border-color-2: var(--clr-gray-125);
+  --border-color-3: var(--clr-red-400);
 
   @media (min-width: 48rem) {
     --font-head-large: 7rem;

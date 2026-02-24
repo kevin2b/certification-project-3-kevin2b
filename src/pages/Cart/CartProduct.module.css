@@ -1,0 +1,78 @@
+.cartItem{
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border: 2px solid var(--border-color-2);
+  border-radius: 1rem;
+  padding-block: 0.25rem;
+  padding-inline: 0.5rem;
+  font-weight: 500;
+}
+
+.heading{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.productName{
+  color: var(--font-link-colour);
+  text-decoration: none;
+  cursor: pointer;
+  margin-inline-end: auto;
+}
+
+.removeButton{
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-colour);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.removeButton:hover,
+.removeButton:focus-visible{
+  border-color: var(--border-color-1);
+  background-color: var(--background-colour-3);
+}
+
+.crossImg{
+  display: block;
+  inline-size: 1.75rem;
+  aspect-ratio: 1 / 1;
+}
+
+.wrapperRow{
+  --image-size: 6rem;
+  display: grid;
+  grid-template-columns: var(--image-size) auto;
+  gap: 1rem;
+}
+
+.productImage{
+  grid-column: 1 / 2;
+  display: block;
+  inline-size: var(--image-size);
+  block-size: auto;
+}
+
+.wrapperInfo{
+  grid-column: 2 / 3;
+  justify-self: center;
+}
+
+.quantity{
+  align-self: center;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.total{
+  align-self: center;
+}
+
+@media (min-width: 48rem) {
+
+}

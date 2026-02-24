@@ -1,0 +1,50 @@
+.wrapper{
+  display: flex;
+  gap: 0.15rem;
+}
+
+.input{
+  inline-size: 4ch;
+  text-align: center;
+  background-color: var(--background-colour-3);
+  border: 1px solid var(--border-color-2);
+  border-radius: 0.25rem;
+  padding-inline: 0.1rem;
+  padding-block: 0.1rem;
+}
+
+.inputError{
+  outline: 2px solid var(--border-color-3)
+}
+
+.button{
+  inline-size: 2rem;
+  cursor: pointer;
+  padding-inline: 0.1rem;
+  padding-block: 0.1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.minus{
+  background-color: var(--background-negative);
+}
+
+.plus{
+  background-color: var(--background-positive);
+}
+
+.minus:not(:disabled):hover,
+.minus:not(:disabled):focus-visible{
+  outline: 2px solid var(--background-negative);
+}
+
+.plus:not(:disabled):hover,
+.plus:not(:disabled):focus-visible{
+  outline: 2px solid var(--background-positive);
+}
+
+.button:disabled{
+  cursor: default;
+  opacity: 0.6;
+}

@@ -1,3 +1,5 @@
+import styles from "./ProductQuantitySelector.module.css";
+
 /**
  * Quantity must be a number.
  * Min and max must be numbers, min>= 0, min < max
@@ -25,11 +27,11 @@ function ProductQuantitySelector({quantity, setQuantity, min, max}){
   }
 
   return (
-    <>
-      <button type="button" disabled={quantity === "" || Number(quantity)<= min} onClick={()=>{setQuantity(quantity-1)}}> - </button>
-      <input type="text" inputMode="numeric" value={quantity} onChange={handleQuantityChange} />
-      <button type="button"  disabled={quantity === "" || Number(quantity)>=max} onClick={()=>{setQuantity(quantity+1)}}> + </button>
-    </>
+    <div className={styles.wrapper}>
+      <button type="button" disabled={quantity === "" || Number(quantity)<= min} onClick={()=>{setQuantity(quantity-1)}} className={`${styles.minus} ${styles.button}`}> - </button>
+      <input type="text" inputMode="numeric" value={quantity} onChange={handleQuantityChange} className={`${styles.input} ${quantity < min ? styles.inputError : ""}`}/>
+      <button type="button"  disabled={quantity === "" || Number(quantity)>=max} onClick={()=>{setQuantity(quantity+1)}} className={`${styles.plus} ${styles.button}`}> + </button>
+    </div>
   );
 }
 export default ProductQuantitySelector;

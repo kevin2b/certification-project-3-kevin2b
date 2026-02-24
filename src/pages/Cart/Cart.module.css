@@ -38,6 +38,12 @@
   background-color: var(--background-colour-3);
 }
 
+.cartItems{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .summary{
   display: flex;
   flex-direction: column;
@@ -67,10 +73,15 @@
   align-self: center;
 }
 
-.checkoutButton:hover,
-.checkoutButton:focus-visible{
+.checkoutButton:not(:disabled):hover,
+.checkoutButton:not(:disabled):focus-visible{
   color: var(--font-head-colour-1);
   background-color: var(--background-colour-5);
+}
+
+.checkoutButton:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 
@@ -79,5 +90,11 @@
     padding-block: 3rem;
     padding-inline: 2rem;
     max-inline-size: var(--maxWidth-desktop);
+  }
+
+  .cartItems{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 }
