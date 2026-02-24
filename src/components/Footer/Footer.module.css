@@ -14,9 +14,8 @@
 }
 
 .logo{
-  max-inline-size: 1.5rem;
   inline-size: 1.5rem;
-  block-size: auto;
+  aspect-ratio: 1 / 1;
   filter: invert(100%) brightness(200%);
 }
 

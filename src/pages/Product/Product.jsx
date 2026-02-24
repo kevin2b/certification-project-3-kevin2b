@@ -64,7 +64,7 @@ function Product(){
   const MAX = product.stock - (cart?.[product.id] ?? 0);
   
   return (
-    <section>
+    <main>
       <button type="button" onClick={handleBack}> Back </button>
       <img src={product.image} alt="Product image" width="100px"/>
       <div> {product.title} </div>
@@ -85,7 +85,7 @@ function Product(){
           </>
         }
       </div>
-    </section>
+    </main>
   )
 }
 

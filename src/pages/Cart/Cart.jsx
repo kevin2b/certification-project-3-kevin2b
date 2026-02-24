@@ -5,6 +5,7 @@ import {reduceAllStock, fetchProducts} from "@/store/slices/ProductsSlice";
 import Loading from "@/components/Loading/Loading";
 import Error from "@/pages/Error/Error";
 import { useEffect } from "react";
+import styles from "./Cart.module.css";
 
 function Cart(){
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function Cart(){
       }
       return (sum +  product.price * cart[currId]);
     } ,0);
-  total = total.toFixed(2);
+  total = Number(total.toFixed(2));
 
   function isValidCart (){
     return cartIds.every(cartId => {
@@ -50,26 +51,41 @@ function Cart(){
   }
 
   return (
-    <section>
+    <main className={styles.cart}>
       {cartIds.length <= 0 ? (
-        <div>No item in cart!</div>
+        <p className={styles.heading}>No items in cart!</p>
       ):(
-        <>
-          <button type="button" onClick={()=>dispatch(removeAllFromCart())}>Clear Cart</button>
-          {cartIds.map(productId => {
-            const productIdNum = Number(productId);
-            const product = products.find((product) => product.id === productIdNum);
-            //Guard
-            if (!product){
-              return null;
-            }
-            return <CartProduct key={productIdNum} id={productIdNum} amountInCart={cart[productId]} {...product} />;
-          })}
-          <div> Grand Total: ${total}</div>
-          <button type="button" onClick={()=>handleCheckout()} disabled={!isValidCart()}>Checkout</button>
-        </>
+        <div className={styles.wrapper}>
+          <button type="button" onClick={()=>dispatch(removeAllFromCart())} className={styles.clearButton}>Clear Cart</button>
+          <section>
+            {cartIds.map(productId => {
+              const productIdNum = Number(productId);
+              const product = products.find((product) => product.id === productIdNum);
+              //Guard
+              if (!product){
+                return null;
+              }
+              return <CartProduct key={productIdNum} id={productIdNum} amountInCart={cart[productId]} {...product} />;
+            })}
+          </section>
+          <section className={styles.summary}>
+            <div className={styles.summaryRow}>
+              <span className={styles.summaryField}> Subtotal:</span>
+              <span> ${total} </span>
+            </div>
+            <div className={styles.summaryRow}>
+              <span className={styles.summaryField}> Tax (13%): </span>
+              <span> ${(total*0.13).toFixed(2)} </span>
+            </div>
+            <div className={styles.summaryRow}>
+              <span className={styles.summaryField}> Grand Total: </span>
+              <span> ${total + Number((total*0.13).toFixed(2))} </span>
+            </div>
+            <button type="button" onClick={()=>handleCheckout()} disabled={!isValidCart()} className={styles.checkoutButton}>Checkout</button>
+          </section>
+        </div>
       )}
-    </section>
+    </main>
   )
 }
 

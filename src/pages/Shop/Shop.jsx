@@ -33,7 +33,7 @@ function Shop(){
   products = orderProducts(products, order);
 
   return (
-    <section> 
+    <main> 
       <input type="text" name="search" id="search" placeholder="Enter product name" value={term} onChange={(e) => setSearchParams({ term: e.target.value, category, order})}/>
       <label htmlFor="category"> Sort By: </label>
       <select id="category" name="category" value={category} onChange={(e) => setSearchParams({term, category: e.target.value, order})}>
@@ -55,7 +55,7 @@ function Shop(){
         ))
       }
       {products.length === 0 && <div> No products found!</div>}
-    </section>
+    </main>
   )
 }
 

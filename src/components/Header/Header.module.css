@@ -15,9 +15,8 @@
 
 .logo{
   display: inline-block;
-  block-size: auto;
+  aspect-ratio: 1 / 1;
   inline-size: 2.5rem;
-  max-inline-size: 2.5rem;
 }
 
 .storeName{
@@ -50,10 +49,9 @@
 }
 
 .cartImg{
-  display: inline-block;
-  block-size: auto;
+  display: block;
+  aspect-ratio: 1 / 1;
   inline-size: 1.5rem;
-  max-inline-size: 1.5rem;
 }
 
 .cartAmount{
@@ -76,11 +74,11 @@
   text-decoration: none;
   color: var(--font-head-colour);
   background-color: var(--background-colour);
-  text-decoration: none;
   padding-inline: 1rem;
   padding-block: 0.5rem;
   border-radius: 0.25rem;
   border: 2px solid var(--border-color);
+  cursor: pointer;
 }
 
 .linkButton:hover,
