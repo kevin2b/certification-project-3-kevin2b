@@ -57,6 +57,11 @@ function Cart(){
       ):(
         <div className={styles.wrapper}>
           <button type="button" onClick={()=>dispatch(removeAllFromCart())} className={styles.clearButton}>Clear Cart</button>
+          <section className={`${styles.desktop} ${styles.header}`}>
+            <span className={styles.headerField}> Info </span>
+            <span className={styles.headerField}> Qty. </span>
+            <span className={styles.headerField}> Total Price </span>
+          </section>
           <section className={styles.cartItems}>
             {cartIds.map(productId => {
               const productIdNum = Number(productId);

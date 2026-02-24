@@ -4,8 +4,8 @@
   gap: 0.25rem;
   border: 2px solid var(--border-color-2);
   border-radius: 1rem;
-  padding-block: 0.25rem;
-  padding-inline: 0.5rem;
+  padding-block: var(--card-block-padding);
+  padding-inline: var(--card-inline-padding);
   font-weight: 500;
 }
 
@@ -20,6 +20,11 @@
   text-decoration: none;
   cursor: pointer;
   margin-inline-end: auto;
+}
+
+.productName:hover,
+.productName:focus-visible{
+  text-decoration: underline;
 }
 
 .removeButton{
@@ -43,8 +48,13 @@
   aspect-ratio: 1 / 1;
 }
 
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 .wrapperRow{
-  --image-size: 6rem;
   display: grid;
   grid-template-columns: var(--image-size) auto;
   gap: 1rem;
@@ -73,6 +83,38 @@
   align-self: center;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 31rem) {
+  .wrapperInfo{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
 
+
+@media (min-width: 48rem) {
+  .cartItem{
+    gap: 0.5rem;
+    padding-block: var(--card-block-padding) 1rem;
+    padding-inline: 1.5rem var(--card-inline-padding);
+  }
+
+  .wrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 0.25rem;
+  }
+
+  .quantity{
+    justify-self: center;
+  }
+
+  .total{
+    justify-self: center;
+  }
+
+  .mobile{
+    display: none;
+  }
 }

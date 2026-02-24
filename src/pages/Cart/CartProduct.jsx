@@ -29,19 +29,21 @@ function CartProduct({id, image, title, price, stock, amountInCart}){
           <img src={crossImg} width="25" alt="Remove from cart" className={styles.crossImg}/>
         </button>
       </div>
-      <div className={styles.wrapperRow}>
-        <img src={image} alt="Product image" width="100" className={styles.productImage}/>
-        <div className={styles.wrapperInfo}>
-          <div> Price Per: ${price} </div>
-          <div> Stock: {stock} </div>
+      <div className={styles.wrapper}>
+        <div className={styles.wrapperRow}>
+          <img src={image} alt="Product image" width="100" className={styles.productImage}/>
+          <div className={styles.wrapperInfo}>
+            <div> Price Per: ${price} </div>
+            <div> Stock: {stock} </div>
+          </div>
         </div>
+        <div className={styles.quantity}>
+          <span className={styles.mobile}> Qty: </span>
+          <ProductQuantitySelector quantity={amountInCart} setQuantity={setQuantity} min={1} max={stock} />
+        </div>
+        <div className={styles.total}> <span className={styles.mobile}>Price Total: </span>${(price * amountInCart).toFixed(2)}</div>
       </div>
-      <div className={styles.quantity}>
-        <span> Qty: </span>
-        <ProductQuantitySelector quantity={amountInCart} setQuantity={setQuantity} min={1} max={stock} />
-      </div>
-      <div className={styles.total}> Price Total: ${(price * amountInCart).toFixed(2)}</div>
-    </article>
+      </article>
   )
 }
 

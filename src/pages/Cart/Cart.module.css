@@ -1,4 +1,7 @@
 .cart{
+  --image-size: 6rem;
+  --card-block-padding: 0.25rem;
+  --card-inline-padding: 0.5rem;
   padding-block: 1rem;
   padding-inline: 1rem;
   flex: auto;
@@ -84,12 +87,31 @@
   cursor: default;
 }
 
+.desktop{
+  display: none;
+}
 
 @media (min-width: 48rem) {
+  .desktop{
+    display: block;
+  }
+
   .cart{
     padding-block: 3rem;
     padding-inline: 2rem;
     max-inline-size: var(--maxWidth-desktop);
+  }
+
+  .header{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    justify-items: center;
+  }
+
+  .headerField{
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.075rem;
   }
 
   .cartItems{
