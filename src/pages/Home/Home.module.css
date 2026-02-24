@@ -57,7 +57,7 @@
   color: var(--font-text-colour-2);
   background-color: var(--background-colour-4);
   padding-inline: 1.4rem;
-  padding-block: 0.75rem;
+  padding-block: 1.1rem;
   border-radius: 2rem;
   border: 2px solid var(--border-color-1);
   font-weight: 700;
@@ -84,5 +84,9 @@
 
   .logo{
     inline-size: 8rem;
+  }
+
+  .linkButton{
+    padding-block: 0.75rem;
   }
 }

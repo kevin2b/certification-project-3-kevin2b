@@ -1,6 +1,6 @@
 .footer{
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
   align-items: center;
   padding-inline: 0.5rem;
   padding-block: 1rem;
@@ -14,7 +14,8 @@
 }
 
 .logo{
-  inline-size: 1.5rem;
+  display: block;
+  inline-size: 2rem;
   aspect-ratio: 1 / 1;
   filter: invert(100%) brightness(200%);
 }
@@ -31,5 +32,9 @@
 @media (min-width: 48rem){
   .desktop{
     display: block;
+  }
+
+  .logo{
+    inline-size: 1.5rem;
   }
 }

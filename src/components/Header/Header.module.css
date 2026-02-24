@@ -30,8 +30,8 @@
   margin-inline-start: auto;
   color: var(--font-head-colour);
   background-color: var(--background-colour);
-  padding-inline: 0.6rem;
-  padding-block: 0.4rem 0.2rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.4rem;
   border-radius: 0.25rem;
   border: 2px solid var(--border-color);
   position: relative
@@ -51,7 +51,7 @@
 .cartImg{
   display: block;
   aspect-ratio: 1 / 1;
-  inline-size: 1.5rem;
+  inline-size: 1.8rem;
 }
 
 .cartAmount{
@@ -75,7 +75,7 @@
   color: var(--font-head-colour);
   background-color: var(--background-colour);
   padding-inline: 1rem;
-  padding-block: 0.5rem;
+  padding-block: 0.75rem;
   border-radius: 0.25rem;
   border: 2px solid var(--border-color);
   cursor: pointer;
@@ -99,5 +99,9 @@
 
   .mobile{
     display: none;
+  }
+
+  .linkButton{
+    padding-block: 0.5rem;
   }
 }

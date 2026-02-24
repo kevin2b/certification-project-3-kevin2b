@@ -11,7 +11,7 @@
 
 .heading{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
 }
 
@@ -20,6 +20,7 @@
   text-decoration: none;
   cursor: pointer;
   margin-inline-end: auto;
+  align-self: center;
 }
 
 .productName:hover,
@@ -44,7 +45,7 @@
 
 .crossImg{
   display: block;
-  inline-size: 1.75rem;
+  inline-size: 2.5rem;
   aspect-ratio: 1 / 1;
 }
 
@@ -92,12 +93,16 @@
   }
 }
 
-
 @media (min-width: 48rem) {
   .cartItem{
     gap: 0.5rem;
     padding-block: var(--card-block-padding) 1rem;
     padding-inline: 1.5rem var(--card-inline-padding);
+  }
+
+  .crossImg{
+    display: block;
+    inline-size: 2rem;
   }
 
   .wrapper{

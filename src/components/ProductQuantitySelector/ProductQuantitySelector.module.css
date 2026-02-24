@@ -4,7 +4,7 @@
 }
 
 .input{
-  inline-size: 4ch;
+  inline-size: 5ch;
   text-align: center;
   background-color: var(--background-colour-3);
   border: 1px solid var(--border-color-2);
@@ -18,10 +18,10 @@
 }
 
 .button{
-  inline-size: 2rem;
+  inline-size: 2.75rem;
   cursor: pointer;
   padding-inline: 0.1rem;
-  padding-block: 0.1rem;
+  padding-block: 0.8rem;
   border-radius: 0.5rem;
   border: none;
 }
@@ -47,4 +47,11 @@
 .button:disabled{
   cursor: default;
   opacity: 0.6;
+}
+
+@media (min-width: 48rem) {
+  .button{
+    inline-size: 2rem;
+    padding-block: 0.4rem;
+  }
 }
