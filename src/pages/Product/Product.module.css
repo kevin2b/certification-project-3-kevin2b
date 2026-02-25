@@ -1,0 +1,16 @@
+.product{
+  --image-size: 6rem;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+
+
+@media (min-width: 48rem) {
+  .product{
+    padding-block: 3rem;
+    padding-inline: 2rem;
+    max-inline-size: var(--maxWidth-desktop);
+  }
+}

@@ -51,7 +51,7 @@ function Cart(){
   }
 
   return (
-    <main className={styles.cart}>
+    <div className={styles.cart}>
       {cartIds.length <= 0 ? (
         <p className={styles.heading}>No items in cart!</p>
       ):(
@@ -90,7 +90,7 @@ function Cart(){
           </section>
         </div>
       )}
-    </main>
+    </div>
   )
 }
 
