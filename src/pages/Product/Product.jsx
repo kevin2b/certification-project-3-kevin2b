@@ -6,6 +6,7 @@ import {addToCart} from "@/store/slices/CartSlice";
 import {fetchProducts} from "@/store/slices/ProductsSlice";
 import Loading from "@/components/Loading/Loading";
 import Error from "@/pages/Error/Error";
+import styles from "./Product.module.css"
 
 function Product(){
   const navigate = useNavigate();
@@ -64,26 +65,33 @@ function Product(){
   const MAX = product.stock - (cart?.[product.id] ?? 0);
   
   return (
-    <article>
-      <button type="button" onClick={handleBack}> Back </button>
-      <img src={product.image} alt="Product image" width="100px"/>
-      <div> {product.title} </div>
-      <div> {product.description} </div>
-      <div> Price: ${product.price} </div>
-      <div> {product.stock > 0 ? "Stock: " + product.stock : "Out of stock!" } </div>
-      <div> In cart: {cart?.[product.id] ?? 0}</div>
-      <div> 
-        {MAX > 0 && 
-          <>
-            <ProductQuantitySelector quantity={quantity} setQuantity={setQuantity} min={MIN} max={MAX}/>
-            <button type="button" disabled={quantity === "" || Number(quantity) < MIN || Number(quantity) > MAX} onClick={handleAddToCart}> Add to Cart </button>
-          </>
-        }
-        {product.stock > 0 && MAX === 0 && 
-          <>
-            <div>You have all remaining stock in your cart!</div>
-          </>
-        }
+    <article className={styles.product}>
+      <button type="button" onClick={handleBack} className={styles.back}> &lsaquo; Back </button>
+      <h2 className={styles.title}> {product.title} </h2>
+      <div className={styles.productInfoWrapper}>
+        <img src={product.image} alt="Product image" width="100" className={styles.productImg}/>
+        <div className={styles.productInfo}>
+          <div className={styles.price}> ${product.price} </div>
+          <div className={styles.stock}> {product.stock > 0 ? "Stock: " + product.stock : "Out of stock!" } </div>
+          <div className={styles.cartQuantity}> In cart: {cart?.[product.id] ?? 0}</div>
+          <div> 
+            {MAX > 0 && 
+              <div className={styles.cartAdder}>
+                <ProductQuantitySelector quantity={quantity} setQuantity={setQuantity} min={MIN} max={MAX}/>
+                <button type="button" disabled={quantity === "" || Number(quantity) < MIN || Number(quantity) > MAX} onClick={handleAddToCart} className={styles.addButton}> Add to Cart </button>
+              </div>
+            }
+            {product.stock > 0 && MAX === 0 && 
+              <>
+                <div className={styles.allStockTaken}>All stock in cart!</div>
+              </>
+            }
+          </div>
+        </div>
+        <div className={styles.descriptionWrapper}>
+          <h3 className={styles.descriptionHeader}>Description</h3>
+          <p className={styles.description}>{product.description} </p>
+        </div>
       </div>
     </article>
   )

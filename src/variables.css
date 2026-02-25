@@ -25,7 +25,7 @@
   --clr-gray-125: hsl(223, 20%, 88%);
   --clr-gray-150: hsl(225, 7%, 79%);
   --clr-gray-200: hsl(228, 3%, 61%);
-  --clr-gray-400: hsl(215, 5%, 54%);
+  --clr-gray-400: hsl(212, 5%, 50%);
   --clr-gray-600: hsl(222, 47%, 11%);
   --clr-gray-800: hsl(228, 38%, 3%);
 
@@ -41,8 +41,10 @@
   --ff-heading: "Cinzel", Georgia, "Times New Roman", serif;
 
   --font-text: 1rem;
-  --font-text-small: 0.75rem;
+  --font-text-smaller: 0.75rem;
+  --font-text-small: 0.9rem;
   --font-text-large: 1.25rem;
+  --font-head-small: 1rem;
   --font-head: 3rem;
   --font-head-large: 4rem;
 
@@ -72,6 +74,8 @@
   --border-color-3: var(--clr-red-400);
 
   @media (min-width: 48rem) {
+    --font-head-smaller: 1.25rem;
+    --font-head-small: 1.5rem;
     --font-head-large: 7rem;
   }
 }
