@@ -35,23 +35,30 @@ function Shop(){
 
   return (
     <div className={styles.shop}>
-      <section>
-        <input type="text" name="search" id="search" placeholder="Enter product name" value={term} onChange={(e) => setSearchParams({ term: e.target.value, category, order})}/>
-        <label htmlFor="category"> Sort By: </label>
-        <select id="category" name="category" value={category} onChange={(e) => setSearchParams({term, category: e.target.value, order})}>
-          <option value="all"> All </option>
-          <option value="men's clothing"> Men's Clothing </option>
-          <option value="women's clothing"> Women's Clothing </option>
-          <option value="jewellery"> Jewelery </option>
-          <option value="electronics"> Electronics </option>
-        </select>
-        <label htmlFor="order"> Sort By: </label>
-        <select id="order" name="order" value={order} onChange={(e) => setSearchParams({term, category, order: e.target.value})}>
-          <option value="nameAsc"> Name: A to Z </option>
-          <option value="nameDesc"> Name: Z to A </option>
-          <option value="priceAsc"> Price: Low to High </option>
-          <option value="priceDesc"> Price: High to Low </option>
-        </select>
+      <section className={styles.search}>
+        <div className={styles.inputWrapper}>
+          <label htmlFor="search" className={styles.inputLabel}> Search </label>
+          <input className={`${styles.input} ${styles.inputText}`} type="text" name="search" id="search" maxLength="200" placeholder="Enter product name" value={term} onChange={(e) => setSearchParams({ term: e.target.value, category, order})}/>
+        </div>
+        <div className={styles.inputWrapper}>
+          <label htmlFor="category" className={styles.inputLabel}> Category </label>
+          <select className={`${styles.input} ${styles.select}`} id="category" name="category" value={category} onChange={(e) => setSearchParams({term, category: e.target.value, order})}>
+            <option value="all"> All </option>
+            <option value="men's clothing"> Men's Clothing </option>
+            <option value="women's clothing"> Women's Clothing </option>
+            <option value="jewellery"> Jewelery </option>
+            <option value="electronics"> Electronics </option>
+          </select>
+        </div>
+        <div className={styles.inputWrapper}>
+          <label htmlFor="order" className={styles.inputLabel}> Sort By </label>
+          <select className={`${styles.input} ${styles.select}`} id="order" name="order" value={order} onChange={(e) => setSearchParams({term, category, order: e.target.value})}>
+            <option value="nameAsc"> Name: A to Z </option>
+            <option value="nameDesc"> Name: Z to A </option>
+            <option value="priceAsc"> Price: Low to High </option>
+            <option value="priceDesc"> Price: High to Low </option>
+          </select>
+        </div>
       </section>
       <section className={styles.productGrid}>
         { products.map(product => (
@@ -59,7 +66,7 @@ function Shop(){
           ))
         }
       </section>
-      {products.length === 0 && <div> No products found!</div>}
+      {products.length === 0 && <p className={styles.zeroFound}> No products found!</p>}
       
     </div>
   )

@@ -29,7 +29,7 @@ function ProductQuantitySelector({quantity, setQuantity, min, max}){
   return (
     <div className={styles.wrapper}>
       <button type="button" disabled={quantity === "" || Number(quantity)<= min} onClick={()=>{setQuantity(quantity-1)}} className={`${styles.minus} ${styles.button}`}> - </button>
-      <input type="text" inputMode="numeric" value={quantity} onChange={handleQuantityChange} className={`${styles.input} ${quantity < min ? styles.inputError : ""}`}/>
+      <input type="text" inputMode="numeric" maxLength={max.toString().length + 1} value={quantity} onChange={handleQuantityChange} className={`${styles.input} ${quantity < min ? styles.inputError : ""}`}/>
       <button type="button"  disabled={quantity === "" || Number(quantity)>=max} onClick={()=>{setQuantity(quantity+1)}} className={`${styles.plus} ${styles.button}`}> + </button>
     </div>
   );

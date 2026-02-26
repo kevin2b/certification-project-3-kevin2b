@@ -7,14 +7,19 @@
   inline-size: 5ch;
   text-align: center;
   background-color: var(--background-colour-3);
+  color: var(--font-text-colour);
   border: 1px solid var(--border-color-2);
   border-radius: 0.25rem;
   padding-inline: 0.1rem;
   padding-block: 0.1rem;
 }
 
+.input:focus{
+  outline: 2px solid var(--border-color-4);
+}
+
 .inputError{
-  outline: 2px solid var(--border-color-3)
+  border: 1px solid var(--border-color-3);
 }
 
 .button{

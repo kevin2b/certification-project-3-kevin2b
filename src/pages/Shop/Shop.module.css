@@ -12,6 +12,54 @@
   gap: 1rem;
 }
 
+.search{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  background-color: var(--background-colour);
+  border: 2px solid var(--border-color-2);
+  border-radius: 0.5rem;
+}
+
+.inputLabel{
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: var(--font-text-smaller);
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+.inputWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.input{
+  min-inline-size: 0;
+}
+
+.inputText,
+.select{
+  background-color: var(--background-colour-3);
+  border: 1px solid var(--border-color-2);
+  border-radius: 0.25rem;
+  padding-inline: 0.25rem;
+  padding-block: 0.7rem;
+  color: var(--font-text-colour);
+}
+
+.inputText:focus,
+.select:focus{
+  outline: 2px solid var(--border-color-4);
+}
+
+.select{
+  cursor: pointer;
+}
 
 .productGrid{
   display: grid;
@@ -21,10 +69,26 @@
   gap: 1rem;
 }
 
+.zeroFound{
+  text-align: center;
+  padding-block: 1rem;
+  font-weight: 700;
+}
+
 @media (min-width: 48rem) {
   .shop{
     padding-block: 3rem;
     padding-inline: 2rem;
     max-inline-size: var(--maxWidth-desktop);
+  }
+
+  .search{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .inputText,
+  .select{
+    padding-block: 0.1rem;
   }
 }
