@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router";
 import Loading from "@/components/Loading/Loading";
 import Error from "@/pages/Error/Error";
 import {fetchProducts} from "@/store/slices/ProductsSlice";
+import styles from "./Shop.module.css";
 
 function Shop(){
   const {items: allProducts, status} = useSelector((state) => state.products);
@@ -33,28 +34,33 @@ function Shop(){
   products = orderProducts(products, order);
 
   return (
-    <div> 
-      <input type="text" name="search" id="search" placeholder="Enter product name" value={term} onChange={(e) => setSearchParams({ term: e.target.value, category, order})}/>
-      <label htmlFor="category"> Sort By: </label>
-      <select id="category" name="category" value={category} onChange={(e) => setSearchParams({term, category: e.target.value, order})}>
-        <option value="all"> All </option>
-        <option value="men's clothing"> Men's Clothing </option>
-        <option value="women's clothing"> Women's Clothing </option>
-        <option value="jewellery"> Jewelery </option>
-        <option value="electronics"> Electronics </option>
-      </select>
-      <label htmlFor="order"> Sort By: </label>
-      <select id="order" name="order" value={order} onChange={(e) => setSearchParams({term, category, order: e.target.value})}>
-        <option value="nameAsc"> Name: A to Z </option>
-        <option value="nameDesc"> Name: Z to A </option>
-        <option value="priceAsc"> Price: Low to High </option>
-        <option value="priceDesc"> Price: High to Low </option>
-      </select>
-      { products.map(product => (
-          <ShopProduct key={product.id} {...product}/>
-        ))
-      }
+    <div className={styles.shop}>
+      <section>
+        <input type="text" name="search" id="search" placeholder="Enter product name" value={term} onChange={(e) => setSearchParams({ term: e.target.value, category, order})}/>
+        <label htmlFor="category"> Sort By: </label>
+        <select id="category" name="category" value={category} onChange={(e) => setSearchParams({term, category: e.target.value, order})}>
+          <option value="all"> All </option>
+          <option value="men's clothing"> Men's Clothing </option>
+          <option value="women's clothing"> Women's Clothing </option>
+          <option value="jewellery"> Jewelery </option>
+          <option value="electronics"> Electronics </option>
+        </select>
+        <label htmlFor="order"> Sort By: </label>
+        <select id="order" name="order" value={order} onChange={(e) => setSearchParams({term, category, order: e.target.value})}>
+          <option value="nameAsc"> Name: A to Z </option>
+          <option value="nameDesc"> Name: Z to A </option>
+          <option value="priceAsc"> Price: Low to High </option>
+          <option value="priceDesc"> Price: High to Low </option>
+        </select>
+      </section>
+      <section className={styles.productGrid}>
+        { products.map(product => (
+            <ShopProduct key={product.id} {...product}/>
+          ))
+        }
+      </section>
       {products.length === 0 && <div> No products found!</div>}
+      
     </div>
   )
 }
