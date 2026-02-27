@@ -29,7 +29,7 @@ function Cart(){
   }
 
   let total = cartIds.reduce((sum, currId) => {
-      const product = products.find(product => product.id === Number(currId));
+      const product = products[currId];
       //In case cannot find product
       if (!product){
         return sum;
@@ -40,8 +40,9 @@ function Cart(){
 
   function isValidCart (){
     return cartIds.every(cartId => {
-      const product = products.find(product => product.id === Number(cartId));
-      return product ? product.stock >= cart[cartId] && cart[cartId] > 0: false;
+      const product = products[cartId];
+      const quantity = cart[cartId];
+      return product ? product.stock >= quantity && quantity > 0: false;
     });
   }
 
@@ -64,13 +65,12 @@ function Cart(){
           </section>
           <section className={styles.cartItems}>
             {cartIds.map(productId => {
-              const productIdNum = Number(productId);
-              const product = products.find((product) => product.id === productIdNum);
+              const product = products[productId];
               //Guard
               if (!product){
                 return null;
               }
-              return <CartProduct key={productIdNum} id={productIdNum} amountInCart={cart[productId]} {...product} />;
+              return <CartProduct key={productId} id={productId} amountInCart={cart[productId]} title={product.title} price={product.price} image={product.image} stock={product.stock}/>;
             })}
           </section>
           <section className={styles.summary}>

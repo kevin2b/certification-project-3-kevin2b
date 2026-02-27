@@ -12,17 +12,16 @@ const fetchProducts = createAsyncThunk('products/fetchProducts',
 const productsSlice = createSlice({
   name: 'products',
   initialState: {
-    items: [],
+    items: {}, //See data.json for format
     status: "idle", //idle, loading, done, error
   },
   reducers: {
-    reduceAllStock: (state, action) => {
+    reduceAllStock: (state, action) => { //Format is {"1": 4, "2": 5,...} where {productId: quantityReduced}
       Object.keys(action.payload).forEach((cartId) => {
-        const productId = Number(cartId);
         const quantity = Number(action.payload[cartId]);
-        const product = state.items.find(product => product.id === productId);
-        if (product){
-          product.stock = Math.max(0, product.stock-quantity)
+        if (cartId in state.items){
+          const product = state.items[cartId];
+          product.stock = Math.max(0, product.stock-quantity);
         }
       });
     }

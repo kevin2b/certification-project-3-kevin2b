@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: {},
+  initialState: {}, //Format is {"1": 4, "2": 5, ...} where {productId: quantityInCart}
   reducers: {
-    addToCart: (state, action) => {
+    addToCart: (state, action) => { //{productId: "1", quantity: 1}
       const productId = action.payload.productId;
       const quantity = Number(action.payload.quantity);
       if (productId in state){
@@ -14,7 +14,7 @@ const cartSlice = createSlice({
         state[productId] = quantity;
       }
     },
-    changeQuantityCart: (state, action) => {
+    changeQuantityCart: (state, action) => { //{productId: "1", quantity: 1}
       const productId = action.payload.productId;
       const quantity = action.payload.quantity;
       if (productId in state){

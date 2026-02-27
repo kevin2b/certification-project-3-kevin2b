@@ -30,7 +30,9 @@ function Shop(){
   const term = searchParams.get("term") || "";
   const category = searchParams.get("category") || "all"; 
   const order = searchParams.get("order") || "nameAsc";
-  let products = filterProducts(allProducts, term, category);
+
+  const allProductsArray = Object.values(allProducts);
+  let products = filterProducts(allProductsArray, term, category);
   products = orderProducts(products, order);
 
   return (
@@ -61,8 +63,8 @@ function Shop(){
         </div>
       </section>
       <section className={styles.productGrid}>
-        { products.map(product => (
-            <ShopProduct key={product.id} {...product}/>
+        {products.map(product => (
+            <ShopProduct key={product.id} id={product.id} title={product.title} price={product.price} image={product.image} stock={product.stock}/>
           ))
         }
       </section>
@@ -72,12 +74,12 @@ function Shop(){
   )
 }
 
-function filterProducts(allProducts, term, category){
-  let products = allProducts;
+function filterProducts(allProductsArray, term, category){
+  let products = allProductsArray;
   //Prevent no stock items from being shown
   products = products.filter(product => product.stock > 0);
 
-  //Filter by term
+  //Filter by search term
   if (term.trimStart() !== ""){
     products = products.filter(product => product.title.toLowerCase().includes(term.trimStart().toLowerCase()));
   }
@@ -98,7 +100,7 @@ function orderProducts(products, order){
       return productsDup.sort((a,b) => a.price - b.price);
     case "priceDesc":
       return productsDup.sort((a,b) => b.price - a.price);
-    default:
+    default: //nameAsc
       return productsDup.sort((a,b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' }));
   }
 }

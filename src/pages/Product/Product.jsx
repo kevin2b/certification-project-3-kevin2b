@@ -51,7 +51,7 @@ function Product(){
     setQuantity(1);
   }
 
-  const product = products.find(product => product.id === Number(id));
+  const product = products[id];
   if (!product){
     return (
     <section>
