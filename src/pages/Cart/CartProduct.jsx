@@ -33,7 +33,7 @@ function CartProduct({id, image, title, price, stock, amountInCart}){
         <div className={styles.wrapperRow}>
           <img src={image} alt={title} width="100" className={styles.productImage}/>
           <div className={styles.wrapperInfo}>
-            <div> Price Per: ${price} </div>
+            <div> Price Per: ${price.toFixed(2)} </div>
             <div> Stock: {stock} </div>
           </div>
         </div>

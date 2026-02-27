@@ -4,8 +4,8 @@ import FAQEntry from "./FAQEntry";
 
 function About(){
   return (
-    <div>
-      <h1>FAQ</h1>
+    <div className={styles.about}>
+      <h1 className={styles.heading}>FAQ</h1>
       {faqData.map(entry => <FAQEntry key={entry.id} question={entry.question} answer={entry.answer}/>)}
     </div>
   )

@@ -52,8 +52,7 @@
   color: var(--font-text-colour);
 }
 
-.inputText:focus,
-.select:focus{
+.inputText:focus{
   outline: 2px solid var(--border-color-4);
 }
 

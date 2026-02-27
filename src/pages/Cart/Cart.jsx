@@ -76,7 +76,7 @@ function Cart(){
           <section className={styles.summary}>
             <div className={styles.summaryRow}>
               <span className={styles.summaryField}> Subtotal:</span>
-              <span> ${total} </span>
+              <span> ${total.toFixed(2)} </span>
             </div>
             <div className={styles.summaryRow}>
               <span className={styles.summaryField}> Tax (13%): </span>

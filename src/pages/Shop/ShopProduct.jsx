@@ -9,7 +9,7 @@ function ShopProduct({id, image, title, price, stock}){
           <img src={image} alt={title} width="100" className={styles.productImg}/>
         </div>
         <h2 className={styles.productName}>{title}</h2>
-        <div className={styles.productPrice}> ${price} </div>
+        <div className={styles.productPrice}> ${price.toFixed(2)} </div>
         <div className={styles.stockInfo}> 
           <div className={styles.stock}>
             Stock

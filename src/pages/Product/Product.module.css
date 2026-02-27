@@ -110,6 +110,10 @@
   font-weight: 700;
 }
 
+.description{
+  font-weight: 300;
+}
+
 @media (min-width: 31rem) {
   .product{
     --image-size: 9rem;

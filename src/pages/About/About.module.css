@@ -1,0 +1,26 @@
+.about{
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  flex: auto;
+  inline-size: 100%;
+  margin-inline: auto;
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.heading{
+  font-weight: 600;
+  color: var(--font-head-colour);
+  font-size: var(--font-head);
+}
+
+@media (min-width: 48rem) {
+  .about{
+    padding-block: 3rem;
+    padding-inline: 2rem;
+    max-inline-size: var(--maxWidth-mobile);
+  }
+}
