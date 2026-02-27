@@ -63,6 +63,7 @@ function Product(){
 
   const MIN = 1;
   const MAX = product.stock - (cart?.[product.id] ?? 0);
+  const formattedPrice = product.price.toFixed(2);
   
   return (
     <article className={styles.product}>
@@ -71,7 +72,7 @@ function Product(){
       <div className={styles.productInfoWrapper}>
         <img src={product.image} alt="Product image" width="100" className={styles.productImg}/>
         <div className={styles.productInfo}>
-          <div className={styles.price}> ${product.price.toFixed(2)} </div>
+          <div className={styles.price}> ${formattedPrice} </div>
           <div className={styles.stock}> {product.stock > 0 ? "Stock: " + product.stock : "Out of stock!" } </div>
           <div className={styles.cartQuantity}> In cart: {cart?.[product.id] ?? 0}</div>
           <div> 

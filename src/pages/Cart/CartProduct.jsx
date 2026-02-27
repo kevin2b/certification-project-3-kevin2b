@@ -8,6 +8,9 @@ import styles from "./CartProduct.module.css";
 function CartProduct({id, image, title, price, stock, amountInCart}){
   const dispatch = useDispatch();
 
+  const formattedPrice = price.toFixed(2);
+  const formattedTotal = (price * amountInCart).toFixed(2);
+
   function setQuantity(val) {
     let quantity = val;
     if (quantity === ""){
@@ -33,7 +36,7 @@ function CartProduct({id, image, title, price, stock, amountInCart}){
         <div className={styles.wrapperRow}>
           <img src={image} alt={title} width="100" className={styles.productImage}/>
           <div className={styles.wrapperInfo}>
-            <div> Price Per: ${price.toFixed(2)} </div>
+            <div> Price Per: ${formattedPrice} </div>
             <div> Stock: {stock} </div>
           </div>
         </div>
@@ -41,7 +44,7 @@ function CartProduct({id, image, title, price, stock, amountInCart}){
           <span className={styles.mobile}> Qty: </span>
           <ProductQuantitySelector quantity={amountInCart} setQuantity={setQuantity} min={1} max={stock} />
         </div>
-        <div className={styles.total}> <span className={styles.mobile}>Price Total: </span>${(price * amountInCart).toFixed(2)}</div>
+        <div className={styles.total}> <span className={styles.mobile}>Price Total: </span>${formattedTotal}</div>
       </div>
       </article>
   )

@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import styles from "./ShopProduct.module.css";
 
 function ShopProduct({id, image, title, price, stock}){
+  const formattedPrice = price.toFixed(2);
   return (
     <article className={styles.productWrapper}>
       <Link to={`/product/` + id} className={styles.product}>
@@ -9,7 +10,7 @@ function ShopProduct({id, image, title, price, stock}){
           <img src={image} alt={title} width="100" className={styles.productImg}/>
         </div>
         <h2 className={styles.productName}>{title}</h2>
-        <div className={styles.productPrice}> ${price.toFixed(2)} </div>
+        <div className={styles.productPrice}> ${formattedPrice} </div>
         <div className={styles.stockInfo}> 
           <div className={styles.stock}>
             Stock

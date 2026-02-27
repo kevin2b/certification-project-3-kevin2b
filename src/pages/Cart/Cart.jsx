@@ -28,7 +28,7 @@ function Cart(){
     return <Error message="Network error."/>;
   }
 
-  let total = cartIds.reduce((sum, currId) => {
+  let subtotal = cartIds.reduce((sum, currId) => {
       const product = products[currId];
       //In case cannot find product
       if (!product){
@@ -36,7 +36,11 @@ function Cart(){
       }
       return (sum +  product.price * cart[currId]);
     } ,0);
-  total = Number(total.toFixed(2));
+  subtotal = Number(subtotal.toFixed(2));
+
+  const formattedSubtotal = subtotal.toFixed(2);
+  const formattedTax = (subtotal*0.13).toFixed(2);
+  const formattedGrandTotal = (subtotal + Number(formattedTax)).toFixed(2);
 
   function isValidCart (){
     return cartIds.every(cartId => {
@@ -76,15 +80,15 @@ function Cart(){
           <section className={styles.summary}>
             <div className={styles.summaryRow}>
               <span className={styles.summaryField}> Subtotal:</span>
-              <span> ${total.toFixed(2)} </span>
+              <span> ${formattedSubtotal} </span>
             </div>
             <div className={styles.summaryRow}>
               <span className={styles.summaryField}> Tax (13%): </span>
-              <span> ${(total*0.13).toFixed(2)} </span>
+              <span> ${formattedTax} </span>
             </div>
             <div className={styles.summaryRow}>
               <span className={styles.summaryField}> Grand Total: </span>
-              <span> ${(total + Number((total*0.13).toFixed(2))).toFixed(2)} </span>
+              <span> ${formattedGrandTotal} </span>
             </div>
             <button type="button" onClick={()=>handleCheckout()} disabled={!isValidCart()} className={styles.checkoutButton}>Checkout</button>
           </section>
