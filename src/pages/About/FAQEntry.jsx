@@ -9,9 +9,9 @@ function FAQEntry({question, answer}){
       <button onClick={()=>{setOpen(!open)}} className={styles.question}>
         <span>{question}</span>
         {open ?(
-          <img src={up} alt="Close" width="10"  className={styles.arrow}/>
+          <img src={up} alt="Close" width="10" className={styles.arrow}/>
         ):(
-          <img src={down} alt="Open" width="10"  className={styles.arrow}/>
+          <img src={down} alt="Open" width="10" className={styles.arrow}/>
         )}
       </button>
       {open && <p className={styles.answer}>{answer}</p>}

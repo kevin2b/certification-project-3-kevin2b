@@ -40,13 +40,10 @@
 }
 
 .minus:not(:disabled):hover,
-.minus:not(:disabled):focus-visible{
-  outline: 2px solid var(--background-negative);
-}
-
+.minus:not(:disabled):focus-visible,
 .plus:not(:disabled):hover,
 .plus:not(:disabled):focus-visible{
-  outline: 2px solid var(--background-positive);
+  outline: 2px solid var(--border-color-4);
 }
 
 .button:disabled{

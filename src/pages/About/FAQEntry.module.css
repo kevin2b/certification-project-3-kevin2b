@@ -41,6 +41,8 @@
   padding-block: 1rem;
   padding-inline: 1rem;
   font-weight: 300;
+  text-indent: 2rem;
+  line-height: 1.5;
 }
 
 @media (min-width: 48rem) {

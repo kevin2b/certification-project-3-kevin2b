@@ -112,6 +112,8 @@
 
 .description{
   font-weight: 300;
+  text-indent: 2rem;
+  line-height: 1.5;
 }
 
 @media (min-width: 31rem) {
@@ -159,5 +161,6 @@
 
   .description{
     font-size: var(--font-text-small);
+    text-indent: 0;
   }
 }
