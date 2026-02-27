@@ -26,6 +26,12 @@
   text-decoration: underline;
 }
 
+.productNotExist{
+  text-align: center;
+  padding-block: 1rem;
+  font-weight: 700;
+}
+
 .title{
   font-weight: 500;
   color: var(--font-text-colour-3);

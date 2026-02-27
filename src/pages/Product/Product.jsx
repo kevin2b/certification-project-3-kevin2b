@@ -54,9 +54,9 @@ function Product(){
   const product = products[id];
   if (!product){
     return (
-    <section>
-      <button type="button" onClick={handleBack}> Back </button>
-      Product does not exist! 
+    <section className={styles.product}>
+      <button type="button" onClick={handleBack} className={styles.back}> Back </button>
+      <p className={styles.productNotExist}>Product does not exist!</p> 
     </section>
     )
   }

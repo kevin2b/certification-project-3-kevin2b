@@ -8,17 +8,19 @@
   flex-direction: column;
   gap: 1rem;
   color: var(--font-text-colour-1);
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
 }
 
 .heading{
   font-size: var(--font-head);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 @media (min-width: 48rem) {
   .error{
     padding-block: 3rem;
     padding-inline: 2rem;
-    max-inline-size: var(--maxWidth-desktop);
+    max-inline-size: var(--maxWidth-mobile);
   }
 }
