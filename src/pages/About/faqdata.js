@@ -1,23 +1,28 @@
 const faqData = [
   {
     id: 1,
-    question: "Lorem ipsum dolor sit amet?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nisi in neque convallis porta. Nullam non porta diam. Aliquam luctus lorem sit amet felis interdum, eget accumsan nisi efficitur."
+    question: "What is Aura Store?",
+    answer: "At Aura Store, we don't just sell products, we deliver experiences. By meticulously selecting the finest pieces in fashion and technology, we ensure that our community stays ahead of the curve. Driven by a passion for quality and a commitment to excellence, Aura Store is your premier destination for a life well-lived."
   },
   {
     id: 2,
-    question: "Consectetur adipiscing elit?",
-    answer: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+    question: "What is Aura Store, actually?",
+    answer: "Aura Store is a frontend project designed to showcase and practice modern web development techniques. It serves as a functional demonstration of a responsive e-commerce interface built from the ground up."
   },
   {
     id: 3,
-    question: "Sed do eiusmod tempor?",
-    answer: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio finibus, vel elementum massa varius."
+    question: "What technologies were used for the frontend development?",
+    answer: "The application is built using a modern stack including HTML, CSS, JavaScript and React. Navigation is powered by React Router, while some state management is handled by Redux Toolkit. Redux Thunk is used for (mocked) asynchronous logic."
   },
   {
     id: 4,
-    question: "Ut enim ad minim veniam?",
-    answer: "Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam."
+    question: "Is there a backend currently implemented?",
+    answer: "At this stage, the project is a frontend-focused demonstration."
+  },
+  {
+    id: 5,
+    question: "What are some improvements that can be made to the frontend?",
+    answer: "While a lot of time has been invested in this project, more can be done. For example, on some user inputs, I could add debouncing rather than triggering a render \"onChange\". I could implement pagination instead of loading all products. I could use images that are smaller in size. Improving accessibility with better contrast and the use of ARIA labels is another consideration. Since there is no backend or sessions, refreshing the page or opening in a new tab resets everything."
   }
 ];
 
