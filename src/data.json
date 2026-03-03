@@ -1,5 +1,5 @@
-{
-  "1": {
+[
+  {
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "price": 109.95,
@@ -8,43 +8,43 @@
     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
     "stock": 15
   },
-  "2": {
+  {
     "id": 2,
     "title": "Mens Casual Premium Slim Fit T-Shirts ",
     "price": 22.3,
-    "description": "Slim-fitting style, contrast raglan long sleeves, three-button Henley placket, lightweight & soft fabric for breathable and comfortable wearing. Solid-stitched shirts with a round neck made for durability and a great fit for casual fashion wear and diehard baseball fans.",
+    "description": "Slim-fitting style, contrast raglan long sleeves, three-button Henley placket, lightweight and soft fabric for breathable and comfortable wearing. Solid-stitched shirts with a round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley-style round neckline includes a three-button placket.",
     "category": "men's clothing",
     "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
     "stock": 0
   },
-  "3": {
+  {
     "id": 3,
     "title": "Mens Cotton Jacket",
     "price": 55.99,
-    "description": "Great outerwear jackets for spring/autumn/winter, suitable for many occasions such as working, hiking, camping, mountain/rock climbing, cycling, traveling, or other outdoors.",
+    "description": "Great outerwear jackets for spring, autumn, and winter; suitable for many occasions such as working, hiking, camping, mountain/rock climbing, cycling, traveling, or other outdoor activities. A good gift choice for you or your family members; a warm-hearted gift for a father, husband, or son for Thanksgiving or Christmas Day.",
     "category": "men's clothing",
     "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
     "stock": 8
   },
-  "4": {
+  {
     "id": 4,
     "title": "Mens Casual Slim Fit",
     "price": 15.99,
-    "description": "The color could be slightly different between the screen and in practice. Please note that body builds vary by person.",
+    "description": "The color could be slightly different between the screen and in practice. Please note that body builds vary by person; therefore, detailed size information should be reviewed below in the product description.",
     "category": "men's clothing",
     "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
     "stock": 27
   },
-  "5": {
+  {
     "id": 5,
     "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
     "price": 695,
-    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl.",
+    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
     "category": "jewellery",
     "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png",
     "stock": 3
   },
-  "6": {
+  {
     "id": 6,
     "title": "Solid Gold Petite Micropave ",
     "price": 168,
@@ -53,16 +53,16 @@
     "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
     "stock": 11
   },
-  "7": {
+  {
     "id": 7,
     "title": "White Gold Plated Princess",
     "price": 9.99,
-    "description": "Classic created wedding engagement solitaire diamond promise ring for her.",
+    "description": "Classic wedding, engagement, or solitaire diamond promise ring for her. These are perfect gifts to spoil your love for an engagement, wedding, anniversary, or Valentine's Day.",
     "category": "jewellery",
     "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png",
     "stock": 35
   },
-  "8": {
+  {
     "id": 8,
     "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
     "price": 10.99,
@@ -71,112 +71,112 @@
     "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png",
     "stock": 48
   },
-  "9": {
+  {
     "id": 9,
     "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
     "price": 64,
-    "description": "USB 3.0 and USB 2.0 compatibility; fast data transfers; improve PC performance; high capacity.",
+    "description": "USB 3.0 and USB 2.0 compatibility; fast data transfers; improved PC performance; and high capacity. Compatibility: formatted NTFS for Windows 10, Windows 8.1, and Windows 7; reformatting may be required for other operating systems; compatibility may vary depending on the user's hardware configuration and operating system.",
     "category": "electronics",
     "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
     "stock": 19
   },
-  "10": {
+  {
     "id": 10,
     "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
     "price": 109,
-    "description": "Easy upgrade for faster boot-up, shutdown, application load, and response.",
+    "description": "An easy upgrade for faster boot-up, shutdown, application loading, and response (as compared to 5400 RPM SATA 2.5” hard drives; based on published specifications and internal benchmarking tests using PCMark Vantage scores). It boosts burst write performance, making it ideal for typical PC workloads. It offers the perfect balance of performance and reliability, with read/write speeds of up to 535MB/s and 450MB/s.",
     "category": "electronics",
     "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png",
     "stock": 22
   },
-  "11": {
+  {
     "id": 11,
     "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
     "price": 109,
-    "description": "3D NAND flash is applied to deliver high transfer speeds. Remarkable transfer speeds enable faster boot-up.",
+    "description": "3D NAND flash is applied to deliver high transfer speeds. Remarkable transfer speeds enable faster boot-up and improved overall system performance. Advanced SLC Cache Technology allows for a performance boost and longer lifespan. The 7mm slim design is suitable for ultrabooks and ultra-slim notebooks. It supports TRIM commands, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide optimized performance and enhanced reliability.",
     "category": "electronics",
     "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
     "stock": 31
   },
-  "12": {
+  {
     "id": 12,
     "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
     "price": 114,
-    "description": "Expand your PS4 gaming experience; play anywhere. Fast and easy setup; sleek design.",
+    "description": "Expand your PS4 gaming experience and play anywhere. Fast and easy setup; sleek design with high capacity; includes a 3-year manufacturer's limited warranty.",
     "category": "electronics",
     "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png",
     "stock": 14
   },
-  "13": {
+  {
     "id": 13,
     "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
     "price": 599,
-    "description": "21.5-inch Full HD (1920 x 1080) widescreen IPS display and Radeon FreeSync technology.",
+    "description": "21.5-inch Full HD (1920 x 1080) widescreen IPS display with Radeon FreeSync technology. No compatibility for VESA mounts. Refresh rate: 75Hz using the HDMI port. Zero-frame design, ultra-thin, 4ms response time, and IPS panel. Aspect ratio: 16:9. Color supported: 16.7 million colors. Brightness: 250 nits. Tilt angle: -5 degrees to 15 degrees. Horizontal and vertical viewing angles: 178 degrees.",
     "category": "electronics",
     "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
     "stock": 6
   },
-  "14": {
+  {
     "id": 14,
     "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor – Super Ultrawide Screen QLED ",
     "price": 999.99,
-    "description": "49-inch super ultrawide 32:9 curved gaming monitor with dual 27-inch screens side by side.",
+    "description": "49-inch super ultrawide 32:9 curved gaming monitor with dual 27-inch screens side by side. Quantum Dot (QLED) technology, HDR support, and factory calibration provide stunningly realistic and accurate color and contrast. A 144Hz high refresh rate and 1ms ultra-fast response time work to eliminate motion blur and ghosting while reducing input lag.",
     "category": "electronics",
     "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png",
     "stock": 2
   },
-  "15": {
+  {
     "id": 15,
     "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     "price": 56.99,
-    "description": "Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner.",
+    "description": "Note: The jackets are US standard size; please choose the size you usually wear. Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. The detachable functional liner is skin-friendly, lightweight, and warm. The stand collar liner jacket keeps you warm in cold weather. Zippered Pockets: includes 2 zippered hand pockets, 2 zippered pockets on the chest (enough to keep cards or keys), and 1 hidden pocket inside. Zippered hand pockets and the hidden pocket keep your things secure. Humanized Design: adjustable and detachable hood and adjustable cuffs prevent wind and water for a comfortable fit. The 3-in-1 detachable design provides more convenience; you can separate the coat and inner as needed, or wear them together. It is suitable for different seasons and helps you adapt to different climates.",
     "category": "women's clothing",
     "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
     "stock": 39
   },
-  "16": {
+  {
     "id": 16,
     "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
     "price": 29.95,
-    "description": "100% Polyurethane (shell), 100% Polyester (lining), 75% Polyester 25% Cotton (sweater).",
+    "description": "100% Polyurethane (shell), 100% Polyester (lining), 75% Polyester, and 25% Cotton (sweater). Faux leather material for style and comfort; 2 pockets on the front, a 2-for-one hooded denim-style faux leather jacket, button detail on the waist, and detail stitching at the sides. Hand wash only; do not bleach; line dry; do not iron.",
     "category": "women's clothing",
     "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png",
     "stock": 44
   },
-  "17": {
+  {
     "id": 17,
     "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
     "price": 39.99,
-    "description": "Lightweight and perfect for trips or casual wear. Long sleeve with hooded design.",
+    "description": "Lightweight and perfect for trips or casual wear. It features long sleeves with a hooded, adjustable drawstring waist design. This raincoat has a button and zipper front closure and is fully stripe-lined. It has 2 side pockets of a good size to hold all kinds of things; it covers the hips and the hood is generous without being excessive. The attached cotton-lined hood with adjustable drawstrings gives it a real styled look.",
     "category": "women's clothing",
     "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png",
     "stock": 21
   },
-  "18": {
+  {
     "id": 18,
     "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
     "price": 9.85,
-    "description": "95% Rayon, 5% Spandex. Made in USA or imported. Lightweight fabric with great stretch.",
+    "description": "95% Rayon, 5% Spandex. Made in the USA or imported. Do not bleach. Lightweight fabric with great stretch for comfort. Ribbed on sleeves and neckline with double stitching on the bottom hem.",
     "category": "women's clothing",
     "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png",
     "stock": 49
   },
-  "19": {
+  {
     "id": 19,
     "title": "Opna Women's Short Sleeve Moisture",
     "price": 7.95,
-    "description": "100% Polyester, machine wash. Lightweight, roomy, and highly breathable with moisture-wicking fabric.",
+    "description": "100% Polyester; machine wash. 100% cationic polyester interlock. Machine washed and pre-shrunk for a great fit. Lightweight, roomy, and highly breathable with moisture-wicking fabric which helps to keep moisture away. Soft, lightweight fabric with a comfortable V-neck collar and a slimmer fit delivers a sleek, more feminine silhouette and added comfort.",
     "category": "women's clothing",
     "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png",
     "stock": 33
   },
-  "20": {
+  {
     "id": 20,
     "title": "DANVOUY Womens T Shirt Casual Cotton Short",
     "price": 12.99,
-    "description": "95% Cotton, 5% Spandex. Features: casual, short sleeve, letter print, V-neck, fashion tees.",
+    "description": "95% Cotton, 5% Spandex. Features: casual, short sleeve, letter print, V-neck, fashion tees. The fabric is soft and has some stretch. Occasions: Casual/Office/Beach/School/Home/Street. Suitable for all seasons: Spring, Summer, Autumn, Winter.",
     "category": "women's clothing",
     "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
     "stock": 17
   }
-}
+]
