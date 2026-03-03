@@ -3,15 +3,14 @@ import styles from "./Header.module.css";
 import logo from '@/assets/images/logo.svg';
 import cartImg from '@/assets/images/cart.svg';
 import { useSelector } from "react-redux";
-
-const CATEGORIES = ["All", "Electronics", "Jewellery", "Men's Clothing", "Women's Clothing"]
+import { CATEGORIES } from "@/constants";
 
 function Header(){
-  const cartQuantity = Object.values(useSelector((state) => state.cart));
-  const totalQuantity = cartQuantity.reduce((sum, curr) => {
-    const num = Number(curr) || 0;
-    return num + sum;
-  }, 0);
+  const totalQuantity = useSelector((state) => Object.values(state.cart).reduce(
+                          (sum, curr) => {
+                            const num = Number(curr) || 0;
+                            return num + sum;
+                          }, 0));
   return (
     <header>
       <div className={styles.firstRow}>
@@ -30,7 +29,7 @@ function Header(){
       </nav>
       <nav className={`${styles.nav} ${styles.desktop}`}>
         {CATEGORIES.map((category) => {
-          return <Link key={category} to={`/shop?category=${category.toLowerCase()}`} className={styles.linkButton}> {category} </Link>
+          return <Link key={category} to={`/shop?category=${encodeURIComponent(category.toLowerCase())}`} className={styles.linkButton}> {category} </Link>
         })}
         <Link to="/about" className={styles.linkButton}> About </Link>
       </nav>

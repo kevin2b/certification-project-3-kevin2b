@@ -8,14 +8,14 @@ function Footer(){
     <footer className={styles.footer}>
       <div className={styles.copyright}> &copy; 2026 Aura Store. kevin2b </div>
       <div className={styles.desktop}> Follow Us: </div>
-      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" width="25"> 
-        <img src={facebook} alt="Facebook" className={styles.logo}/>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"> 
+        <img src={facebook} alt="Facebook" className={styles.logo} width="25"/>
       </a>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" width="25"> 
-        <img src={instagram} alt="Instagram" className={styles.logo}/>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"> 
+        <img src={instagram} alt="Instagram" className={styles.logo} width="25"/>
       </a>
-      <a href="https://www.x.com" target="_blank" rel="noopener noreferrer" width="25">
-        <img src={twitter} alt="Twitter" className={styles.logo}/>
+      <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
+        <img src={twitter} alt="Twitter" className={styles.logo} width="25"/>
       </a>
     </footer>
   )

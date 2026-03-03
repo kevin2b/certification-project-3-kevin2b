@@ -46,11 +46,6 @@ function Product(){
     }
   }
 
-  function handleAddToCart(){
-    dispatch(addToCart({productId: product.id , quantity}));
-    setQuantity(1);
-  }
-
   const product = products[id];
   if (!product){
     return (
@@ -62,15 +57,20 @@ function Product(){
   }
 
   const MIN = 1;
-  const MAX = product.stock - (cart?.[product.id] ?? 0);
+  const MAX = product.stock - (cart[product.id] ?? 0);
   const formattedPrice = product.price.toFixed(2);
+
+  function handleAddToCart(){
+    dispatch(addToCart({productId: product.id , quantity}));
+    setQuantity(1);
+  }
   
   return (
     <article className={styles.product}>
       <button type="button" onClick={handleBack} className={styles.back}> &lsaquo; Back </button>
       <h2 className={styles.title}> {product.title} </h2>
       <div className={styles.productInfoWrapper}>
-        <img src={product.image} alt="Product image" width="100" className={styles.productImg}/>
+        <img src={product.image} alt={product.title} width="100" className={styles.productImg}/>
         <div className={styles.productInfo}>
           <div className={styles.price}> ${formattedPrice} </div>
           <div className={styles.stock}> {product.stock > 0 ? "Stock: " + product.stock : "Out of stock!" } </div>
@@ -78,7 +78,7 @@ function Product(){
           <div> 
             {MAX > 0 && 
               <div className={styles.cartAdder}>
-                <ProductQuantitySelector quantity={quantity} setQuantity={setQuantity} min={MIN} max={MAX}/>
+                <ProductQuantitySelector quantity={quantity} changeQuantity={setQuantity} min={MIN} max={MAX}/>
                 <button type="button" disabled={quantity === "" || Number(quantity) < MIN || Number(quantity) > MAX} onClick={handleAddToCart} className={styles.addButton}> Add to Cart </button>
               </div>
             }

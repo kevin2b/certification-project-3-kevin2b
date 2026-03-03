@@ -7,6 +7,10 @@ const cartSlice = createSlice({
     addToCart: (state, action) => { //{productId: "1", quantity: 1}
       const productId = action.payload.productId;
       const quantity = Number(action.payload.quantity);
+      //Skip if invalid quantity
+      if (isNaN(quantity) || quantity < 0){
+        return;
+      }
       if (productId in state){
         state[productId] += quantity;
       }
@@ -14,11 +18,21 @@ const cartSlice = createSlice({
         state[productId] = quantity;
       }
     },
-    changeQuantityCart: (state, action) => { //{productId: "1", quantity: 1}
+    changeQuantityCart: (state, action) => { //{productId: "1", quantity: 1} quantity can also be ""
       const productId = action.payload.productId;
       const quantity = action.payload.quantity;
+      //"" is valid
+      if (quantity === "" && productId in state) {
+        state[productId] = "";
+        return;
+      }
+      const numQuantity = Number(quantity);
+      //Skip if invalid quantity
+      if (isNaN(numQuantity) || numQuantity < 0){
+        return;
+      }
       if (productId in state){
-        state[productId] = quantity === ""? 0: Number(quantity);
+        state[productId] = numQuantity;
       }
     },
     removeFromCart: (state, action) => {

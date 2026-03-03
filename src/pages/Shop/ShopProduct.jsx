@@ -6,7 +6,7 @@ function ShopProduct({id, image, title, price, stock}){
   return (
     <article className={styles.productWrapper}>
       <Link to={`/product/` + id} className={styles.product}>
-        <div  className={styles.productImgWrapper}>
+        <div className={styles.productImgWrapper}>
           <img src={image} alt={title} width="100" className={styles.productImg}/>
         </div>
         <h2 className={styles.productName}>{title}</h2>

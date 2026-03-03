@@ -22,7 +22,7 @@ const faqData = [
   {
     id: 5,
     question: "What are some improvements that can be made to the frontend?",
-    answer: "While a lot of time has been invested in this project, more can be done. For example, on some user inputs, I could add debouncing rather than triggering a render \"onChange\". I could implement pagination instead of loading all products. I could use images that are smaller in size. Improving accessibility with better contrast and the use of ARIA labels is another consideration. Since there is no backend or sessions, refreshing the page or opening in a new tab resets everything."
+    answer: "While a lot of time has been invested in this project, more can be done. For example, on some user inputs, I could add debouncing rather than triggering a render \"onChange\". There could be optimization with useMemo to prevent unnecessary calculations. I could implement pagination instead of loading all products. I could use images that are smaller in size. Improving accessibility with better contrast and the use of ARIA labels is another consideration. Since there is no backend or sessions, refreshing the page or opening in a new tab resets everything."
   }
 ];
 

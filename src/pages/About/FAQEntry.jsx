@@ -6,13 +6,9 @@ function FAQEntry({question, answer}){
   const [open, setOpen] = useState(false);
   return(
     <article className={styles.entry}>
-      <button onClick={()=>{setOpen(!open)}} className={styles.question}>
+      <button onClick={()=>{setOpen(prev => !prev)}} className={styles.question}>
         <span>{question}</span>
-        {open ?(
-          <img src={up} alt="Close" width="10" className={styles.arrow}/>
-        ):(
-          <img src={down} alt="Open" width="10" className={styles.arrow}/>
-        )}
+          <img src={open ? up : down} alt={open ? "Close" : "Open"} width="10" className={styles.arrow}/>
       </button>
       {open && <p className={styles.answer}>{answer}</p>}
     </article>

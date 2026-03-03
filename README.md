@@ -25,6 +25,6 @@ At this stage, the project is a **frontend-focused demonstration**.
 ### What are some improvements that can be made to the frontend?
 While a lot of time has been invested in this project, more can be done. Key considerations for future updates include:
 
-* **Performance:** Adding **debouncing** to user inputs rather than triggering a render `onChange`, implementing **pagination** instead of loading all products, and using images that are smaller in size.
+* **Performance:** Adding **debouncing** to user inputs rather than triggering a render `onChange`, implementing **pagination** instead of loading all products, using `useMemo` to prevent unnecessary recalculations, and using images that are smaller in size.
 * **Accessibility:** Improving color contrast and the implementation of **ARIA labels**.
 * **Persistence:** Currently, since there is no backend or session management, refreshing the page or opening a new tab resets all data.

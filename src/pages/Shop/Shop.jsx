@@ -6,6 +6,7 @@ import Loading from "@/components/Loading/Loading";
 import Error from "@/pages/Error/Error";
 import {fetchProducts} from "@/store/slices/ProductsSlice";
 import styles from "./Shop.module.css";
+import { CATEGORIES } from "@/constants";
 
 function Shop(){
   const {items: allProducts, status} = useSelector((state) => state.products);
@@ -35,26 +36,32 @@ function Shop(){
   let products = filterProducts(allProductsArray, term, category);
   products = orderProducts(products, order);
 
+  function handleSearchChange(term, value){
+    setSearchParams((prev) => {
+      const curr = new URLSearchParams(prev);
+      curr.set(term, value)
+      return curr;
+    }, {replace: true});
+  }
+
   return (
     <div className={styles.shop}>
       <section className={styles.search}>
         <div className={styles.inputWrapper}>
           <label htmlFor="search" className={styles.inputLabel}> Search </label>
-          <input className={`${styles.input} ${styles.inputText}`} type="text" name="search" id="search" maxLength="200" placeholder="Enter product name" value={term} onChange={(e) => setSearchParams({ term: e.target.value, category, order})}/>
+          <input className={`${styles.input} ${styles.inputText}`} type="text" name="search" id="search" maxLength="200" placeholder="Enter product name" value={term} onChange={(e) => handleSearchChange("term", e.target.value)}/>
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="category" className={styles.inputLabel}> Category </label>
-          <select className={`${styles.input} ${styles.select}`} id="category" name="category" value={category} onChange={(e) => setSearchParams({term, category: e.target.value, order})}>
-            <option value="all"> All </option>
-            <option value="men's clothing"> Men's Clothing </option>
-            <option value="women's clothing"> Women's Clothing </option>
-            <option value="jewellery"> Jewelery </option>
-            <option value="electronics"> Electronics </option>
+          <select className={`${styles.input} ${styles.select}`} id="category" name="category" value={category} onChange={(e) => handleSearchChange("category", e.target.value)}>
+            {CATEGORIES.map (category => {
+              return <option key={category} value={category.toLowerCase()}> {category} </option>;
+            })}
           </select>
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="order" className={styles.inputLabel}> Sort By </label>
-          <select className={`${styles.input} ${styles.select}`} id="order" name="order" value={order} onChange={(e) => setSearchParams({term, category, order: e.target.value})}>
+          <select className={`${styles.input} ${styles.select}`} id="order" name="order" value={order} onChange={(e) => handleSearchChange("order", e.target.value)}>
             <option value="nameAsc"> Name: A to Z </option>
             <option value="nameDesc"> Name: Z to A </option>
             <option value="priceAsc"> Price: Low to High </option>
@@ -80,9 +87,7 @@ function filterProducts(allProductsArray, term, category){
   products = products.filter(product => product.stock > 0);
 
   //Filter by search term
-  if (term.trimStart() !== ""){
-    products = products.filter(product => product.title.toLowerCase().includes(term.trimStart().toLowerCase()));
-  }
+  products = products.filter(product => product.title.toLowerCase().includes(term.trimStart().toLowerCase()));
 
   //Filter by category
   if (category !== "all"){

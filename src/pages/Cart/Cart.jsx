@@ -28,19 +28,21 @@ function Cart(){
     return <Error message="Network error."/>;
   }
 
-  let subtotal = cartIds.reduce((sum, currId) => {
+  //Convert to cent to avoid floating point math
+  const subtotalInCents = cartIds.reduce((sum, currId) => {
       const product = products[currId];
       //In case cannot find product
       if (!product){
         return sum;
       }
-      return (sum +  product.price * cart[currId]);
-    } ,0);
-  subtotal = Number(subtotal.toFixed(2));
+      return (sum + Math.round(product.price*100) * cart[currId]);
+    } , 0);
+  const taxInCents = Math.round(subtotalInCents * 0.13);
+  const grandTotalInCents = subtotalInCents + taxInCents;
 
-  const formattedSubtotal = subtotal.toFixed(2);
-  const formattedTax = (subtotal*0.13).toFixed(2);
-  const formattedGrandTotal = (subtotal + Number(formattedTax)).toFixed(2);
+  const formattedSubtotal = (subtotalInCents / 100).toFixed(2);
+  const formattedTax = (taxInCents / 100).toFixed(2);
+  const formattedGrandTotal = (grandTotalInCents / 100).toFixed(2);
 
   function isValidCart (){
     return cartIds.every(cartId => {
