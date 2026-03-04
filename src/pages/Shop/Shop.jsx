@@ -47,11 +47,7 @@ function Shop(){
   //Prevent cursor location from resetting in input text box
   function handleSearchTermChange(value){
     setTerm(value);
-    setSearchParams((prev) => {
-      const curr = new URLSearchParams(prev);
-      curr.set("term", value)
-      return curr;
-    }, {replace: true});
+    handleSearchChange("term", value);
   }
 
   return (
