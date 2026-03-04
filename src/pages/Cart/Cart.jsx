@@ -31,8 +31,8 @@ function Cart(){
   //Convert to cent to avoid floating point math
   const subtotalInCents = cartIds.reduce((sum, currId) => {
       const product = products[currId];
-      //In case cannot find product
-      if (!product){
+      //In case cannot find product or cart quantity is ""
+      if (!product || cart[currId] === ""){
         return sum;
       }
       return (sum + Math.round(product.price*100) * cart[currId]);

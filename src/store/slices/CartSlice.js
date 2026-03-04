@@ -11,7 +11,7 @@ const cartSlice = createSlice({
       if (isNaN(quantity) || quantity < 0){
         return;
       }
-      if (productId in state){
+      if (productId in state && state[productId] != ""){
         state[productId] += quantity;
       }
       else{
