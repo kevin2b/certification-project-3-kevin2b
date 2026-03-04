@@ -36,11 +36,20 @@ function Shop(){
   let products = filterProducts(allProductsArray, term, category);
   products = orderProducts(products, order);
 
-  function handleSearchChange(term, value){
+  function handleSearchChange(key, value){
+    setSearchParams((prev) => {
+      const curr = new URLSearchParams(prev);
+      curr.set(key, value)
+      return curr;
+    }, {replace: true});
+  }
+
+  //Prevent cursor location from resetting in input text box
+  function handleSearchTermChange(value){
     setTerm(value);
     setSearchParams((prev) => {
       const curr = new URLSearchParams(prev);
-      curr.set(term, value)
+      curr.set("term", value)
       return curr;
     }, {replace: true});
   }
@@ -50,7 +59,7 @@ function Shop(){
       <section className={styles.search}>
         <div className={styles.inputWrapper}>
           <label htmlFor="search" className={styles.inputLabel}> Search </label>
-          <input className={`${styles.input} ${styles.inputText}`} type="text" name="search" id="search" maxLength="200" placeholder="Enter product name" value={term} onChange={(e) => handleSearchChange("term", e.target.value)}/>
+          <input className={`${styles.input} ${styles.inputText}`} type="text" name="search" id="search" maxLength="200" placeholder="Enter product name" value={term} onChange={(e) => handleSearchTermChange( e.target.value)}/>
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="category" className={styles.inputLabel}> Category </label>
