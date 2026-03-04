@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ShopProduct from "./ShopProduct";
 import { useSearchParams } from "react-router";
 import Loading from "@/components/Loading/Loading";
@@ -11,6 +11,7 @@ import { CATEGORIES } from "@/constants";
 function Shop(){
   const {items: allProducts, status} = useSelector((state) => state.products);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [term, setTerm] = useState(searchParams.get("term") || "");
   const dispatch = useDispatch();
 
   //Attempt data fetch if error in previous fetch
@@ -28,7 +29,6 @@ function Shop(){
     return <Error message="Network error."/>;
   }
 
-  const term = searchParams.get("term") || "";
   const category = searchParams.get("category") || "all"; 
   const order = searchParams.get("order") || "nameAsc";
 
@@ -37,6 +37,7 @@ function Shop(){
   products = orderProducts(products, order);
 
   function handleSearchChange(term, value){
+    setTerm(value);
     setSearchParams((prev) => {
       const curr = new URLSearchParams(prev);
       curr.set(term, value)
