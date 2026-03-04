@@ -1,7 +1,7 @@
 # certification-project-3-kevin2b
 
 ### What is this?
-This is a **frontend project** designed to showcase and practice modern web development techniques. It serves as a functional demonstration of a responsive e-commerce interface built from the ground up.
+This is a **frontend project** designed to showcase and practice modern web development techniques. It serves as a functional demonstration of a responsive e-commerce interface built from the ground up. [Click here to visit this React project deployed on Netlify](https://aura-store-cert-project-3.netlify.app/)
 
 ---
 
