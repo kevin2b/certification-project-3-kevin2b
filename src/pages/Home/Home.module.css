@@ -64,10 +64,16 @@
   animation: appear 1s 2s ease both;
 }
 
-.linkButton:hover,
 .linkButton:focus-visible{
   color: var(--font-head-colour-1);
   background-color: var(--background-colour-5);
+}
+
+@media (hover: hover) {
+  .linkButton:hover{
+    color: var(--font-head-colour-1);
+    background-color: var(--background-colour-5);
+  }
 }
 
 @media (min-width: 48rem) {

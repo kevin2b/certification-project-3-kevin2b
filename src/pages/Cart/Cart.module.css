@@ -35,11 +35,18 @@
   cursor: pointer;
 }
 
-.clearButton:hover,
 .clearButton:focus-visible{
   border-color: var(--border-color-1);
   color: var(--font-head-colour-1);
   background-color: var(--background-colour-3);
+}
+
+@media (hover: hover) {
+  .clearButton:hover{
+    border-color: var(--border-color-1);
+    color: var(--font-head-colour-1);
+    background-color: var(--background-colour-3);
+  }
 }
 
 .cartItems{
@@ -77,10 +84,16 @@
   align-self: center;
 }
 
-.checkoutButton:not(:disabled):hover,
 .checkoutButton:not(:disabled):focus-visible{
   color: var(--font-head-colour-1);
   background-color: var(--background-colour-5);
+}
+
+@media (hover: hover) {
+  .checkoutButton:not(:disabled):hover{
+    color: var(--font-head-colour-1);
+    background-color: var(--background-colour-5);
+  }
 }
 
 .checkoutButton:disabled {

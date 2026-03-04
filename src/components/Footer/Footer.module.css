@@ -20,11 +20,14 @@
   filter: invert(100%) brightness(200%);
 }
 
-.logo:hover,
 .logo:focus-visible {
   filter: invert(41%) sepia(98%) saturate(4884%) hue-rotate(349deg) brightness(101%) contrast(105%);
 }
-
+@media (hover: hover) {
+  .logo:hover{
+    filter: invert(41%) sepia(98%) saturate(4884%) hue-rotate(349deg) brightness(101%) contrast(105%);
+  }
+}
 .desktop{
   display: none;
 }

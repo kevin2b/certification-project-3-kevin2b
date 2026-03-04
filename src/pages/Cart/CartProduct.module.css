@@ -23,9 +23,14 @@
   align-self: center;
 }
 
-.productName:hover,
 .productName:focus-visible{
   text-decoration: underline;
+}
+
+@media (hover: hover) {
+  .productName:hover{
+    text-decoration: underline;
+  }
 }
 
 .removeButton{
@@ -37,10 +42,16 @@
   border-radius: 0.5rem;
 }
 
-.removeButton:hover,
 .removeButton:focus-visible{
   border-color: var(--border-color-1);
   background-color: var(--background-colour-3);
+}
+
+@media (hover: hover) {
+  .removeButton:hover{
+    border-color: var(--border-color-1);
+    background-color: var(--background-colour-3);
+  }
 }
 
 .crossImg{

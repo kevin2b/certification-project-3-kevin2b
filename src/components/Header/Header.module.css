@@ -37,15 +37,24 @@
   position: relative
 }
 
-.cart:hover,
 .cart:focus-visible{
   border-color: var(--border-color-1);
   background-color: var(--background-colour-3);
 }
 
-.cart:hover > .cartImg,
 .cart:focus-visible > .cartImg{
   filter: invert(41%) sepia(98%) saturate(4884%) hue-rotate(349deg) brightness(101%) contrast(105%);
+}
+
+@media (hover: hover) {
+  .cart:hover{
+    border-color: var(--border-color-1);
+    background-color: var(--background-colour-3);
+  }
+
+  .cart:hover > .cartImg{
+    filter: invert(41%) sepia(98%) saturate(4884%) hue-rotate(349deg) brightness(101%) contrast(105%);
+  }
 }
 
 .cartImg{
@@ -81,11 +90,18 @@
   cursor: pointer;
 }
 
-.linkButton:hover,
 .linkButton:focus-visible{
   border-color: var(--border-color-1);
   color: var(--font-head-colour-1);
   background-color: var(--background-colour-3);
+}
+
+@media (hover: hover) {
+  .linkButton:hover{
+    border-color: var(--border-color-1);
+    color: var(--font-head-colour-1);
+    background-color: var(--background-colour-3);
+  }
 }
 
 .desktop{

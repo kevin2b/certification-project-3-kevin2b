@@ -21,9 +21,14 @@
   font-weight: 600;
 }
 
-.back:hover,
 .back:focus-visible{
   text-decoration: underline;
+}
+
+@media (hover: hover) {
+  .back:hover{
+    text-decoration: underline;
+  }
 }
 
 .productNotExist{
@@ -88,10 +93,16 @@
   cursor: pointer;
 }
 
-.addButton:not(:disabled):hover,
 .addButton:not(:disabled):focus-visible{
   color: var(--font-head-colour-1);
   background-color: var(--background-colour-5);
+}
+
+@media (hover: hover) {
+  .addButton:not(:disabled):hover{
+    color: var(--font-head-colour-1);
+    background-color: var(--background-colour-5);
+  }
 }
 
 .addButton:disabled {

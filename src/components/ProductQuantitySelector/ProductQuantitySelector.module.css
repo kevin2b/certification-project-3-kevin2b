@@ -39,11 +39,16 @@
   background-color: var(--background-positive);
 }
 
-.minus:not(:disabled):hover,
 .minus:not(:disabled):focus-visible,
-.plus:not(:disabled):hover,
 .plus:not(:disabled):focus-visible{
   outline: 2px solid var(--border-color-4);
+}
+
+@media (hover: hover) {
+  .minus:not(:disabled):hover,
+  .plus:not(:disabled):hover{
+    outline: 2px solid var(--border-color-4);
+  }
 }
 
 .button:disabled{

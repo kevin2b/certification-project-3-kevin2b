@@ -15,10 +15,16 @@
   font-size: var(--font-text);
 }
 
-.productWrapper:hover .product,
 .productWrapper:focus-visible .product{
   border-color: var(--border-color-4);
   transform: translateY(-0.2rem);
+}
+
+@media (hover: hover) {
+  .productWrapper:hover .product{
+    border-color: var(--border-color-4);
+    transform: translateY(-0.2rem);
+  }
 }
 
 .productImgWrapper{

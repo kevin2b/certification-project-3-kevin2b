@@ -20,11 +20,6 @@
   align-items: center;
 }
 
-.question:hover,
-.question:focus-visible{
-  color: var(--font-head-colour-1);
-}
-
 .arrow{
   margin-inline-start: auto;
   display: block;
@@ -32,9 +27,22 @@
   block-size: auto;
 }
 
-.question:hover .arrow,
+.question:focus-visible{
+  color: var(--font-head-colour-1);
+}
+
 .question:focus-visible .arrow{
   filter: invert(53%) sepia(93%) saturate(3018%) hue-rotate(345deg) brightness(101%) contrast(106%);
+}
+
+@media (hover: hover) {
+  .question:hover{
+    color: var(--font-head-colour-1);
+  }
+
+  .question:hover .arrow{
+    filter: invert(53%) sepia(93%) saturate(3018%) hue-rotate(345deg) brightness(101%) contrast(106%);
+  }
 }
 
 .answer{
